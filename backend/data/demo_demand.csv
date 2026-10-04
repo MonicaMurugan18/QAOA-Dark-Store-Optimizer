@@ -1,0 +1,13 @@
+area,product_key,demand_quantity,delivery_time_limit,data_source,notes
+Venkata Nagar,SKU01,900,15,DEMO_ASSUMPTION,"Illustrative daily demand (~450 orders/day at 5 items per order). NOT observed operator data."
+Venkata Nagar,SKU02,600,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Venkata Nagar,SKU03,750,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Lawspet,SKU01,1050,15,DEMO_ASSUMPTION,"Illustrative daily demand (~525 orders/day)."
+Lawspet,SKU02,700,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Lawspet,SKU03,875,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Marie Oulgaret,SKU01,800,15,DEMO_ASSUMPTION,"Illustrative daily demand (~385 orders/day)."
+Marie Oulgaret,SKU02,475,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Marie Oulgaret,SKU03,650,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Krishna Nagar,SKU01,725,15,DEMO_ASSUMPTION,"Illustrative daily demand (~353 orders/day)."
+Krishna Nagar,SKU02,440,15,DEMO_ASSUMPTION,"Illustrative daily demand."
+Krishna Nagar,SKU03,600,15,DEMO_ASSUMPTION,"Illustrative daily demand."

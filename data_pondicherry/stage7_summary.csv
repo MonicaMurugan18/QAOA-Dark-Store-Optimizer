@@ -1,0 +1,7 @@
+instance,qubits,method,cost
+full 11x20,2275,greedy,155503.59
+full 11x20,2275,annealing (INFEASIBLE),88273127.42997701
+slice 4x4,20,exact,35139.67
+slice 4x4,20,greedy,35139.67
+slice 4x4,20,annealing,37478.809999997145
+slice 4x4,20,QAOA,59885.029999999984

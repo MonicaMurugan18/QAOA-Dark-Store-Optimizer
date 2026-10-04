@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# QAOA Dark-Store Optimization backend
+# Verified on Python 3.14 / Windows. Python 3.11+ is required.
+# ---------------------------------------------------------------------------
+
+# --- web ---
+fastapi==0.141.1
+uvicorn[standard]==0.41.0
+pydantic==2.13.5
+pydantic-settings==2.13.0
+python-dotenv==1.2.1
+
+# --- database ---
+SQLAlchemy==2.1.1
+psycopg2-binary==2.9.12
+
+# --- data ---
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+
+# --- quantum ---
+# Qiskit 2.x removed the V1 Sampler primitive; this project uses
+# StatevectorSampler. qiskit-algorithms is installed for QuadraticProgram
+# interop but its QAOA class is NOT used -- it scales pathologically on this
+# version combination (>200s at 11 qubits). See app/services/qaoa_service.py.
+qiskit==2.5.2
+qiskit-optimization==0.7.0
+qiskit-algorithms==0.4.0
+
+# --- classical OR baseline ---
+# PINNED BELOW 3.0 ON PURPOSE. PuLP 4.x is a Rust rewrite with a different API
+# and ships NO bundled solver (listSolvers(onlyAvailable=True) returns []).
+# 2.9 bundles CBC, so no separate solver install is needed.
+PuLP>=2.8,<3.0
+
+# --- tests ---
+pytest==9.0.1
+httpx==0.28.1

@@ -1,0 +1,150 @@
+================================================================
+DATASET FIXES NEEDED - qaoa_dataset_pondicherry
+================================================================
+
+Edit generate_dataset_pondicherry.py and run it again.
+Do NOT edit the CSV files by hand.
+
+Good news: the file structure, the Puducherry locations, and the
+distance formula are all fine. Keep them. Only the numbers are wrong.
+
+
+----------------------------------------------------------------
+MUST FIX - without these there is no problem to solve
+----------------------------------------------------------------
+
+1. DEMAND IS 10 TIMES TOO SMALL
+   Now: each order has only 0.1 to 0.25 items. Not possible.
+   Cause: the "/ 10" in the mean_demand line.
+   Change: remove "/ 10". Use:
+           mean_units = zone_orders * 5 * sku_share
+           (5 = items in one quick-commerce order)
+   Check: items per order should be 4 to 6.
+
+2. STORES ARE 284 TIMES TOO BIG
+   Now: demand 559 units, capacity 158,673 units.
+   Problem: every plan fits, so the answer is always "open the
+            cheapest store". Nothing to optimise.
+   Change: calculate demand first, then set capacity from it:
+           capacity[i] = 2.2 * total_demand * sqft[i] / total_sqft
+           Use litres, not unit counts.
+   Check: capacity / demand should be about 2x, not 284x.
+
+3. NINE STORES HAVE 0.00 MINUTE DELIVERY
+   Now: DS01/Z01, DS02/Z03, DS03/Z10, DS04/Z19, DS05/Z18,
+        DS06/Z13, DS07/Z12, DS08/Z16, DS09/Z11 all show 0 minutes.
+   Cause: the site list and the zone list use the same
+          coordinates, and there is no picking time.
+   Change: (a) add 3 minutes picking time to every delivery
+           (b) move each site about 390 m from the zone centre
+   Check: no delivery time should be 0.
+
+4. ZONE Z20 CANNOT BE REACHED
+   (You will only see this after fixing 1, 2 and 3.)
+   Now: Z20 Auroville Fringe - nearest store is 15.13 minutes.
+        Our promise is 15.00 minutes. It misses by 8 seconds.
+   Change: add a new store site:
+           ("DS11", "Kuilapalayam", 11.9958, 79.8175)
+   DO NOT change the promise to 16 minutes. The 15-minute promise
+   is the main point of the project.
+
+
+----------------------------------------------------------------
+SHOULD FIX - results will not be accepted without these
+----------------------------------------------------------------
+
+5. PRODUCT SHARES ADD UP TO 1.18, NOT 1.00
+   Cause: Dairy has 2 products (milk and eggs) but the full 0.18
+          Dairy share is given to both.
+   Change: divide each category share by how many products are
+           in that category. Dairy becomes 0.09 + 0.09.
+
+6. unit_volume_liters IS NEVER USED
+   Now: chips (0.15 L) take the same space as water (1.0 L).
+   Change: demand_volume_liters = units * unit_volume_liters
+           and measure store capacity in litres.
+
+7. RENT HAS NO RELATION TO STORE SIZE
+   Now: 1,200 sqft costs Rs 76,434 but 2,000 sqft costs Rs 51,023.
+        White Town (most expensive area) is cheap per sqft.
+   Cause: rent, setup cost and size are three separate random
+          numbers.
+   Change: rent = sqft * 35 * location_premium
+           location_premium = 1.35 - 0.05 * km_from_town_centre
+           setup = sqft * (280 to 360)
+   Check: correlation between rent and sqft should be above 0.8.
+
+
+----------------------------------------------------------------
+GOOD TO FIX - a reviewer will ask about these
+----------------------------------------------------------------
+
+8.  POPULATION DENSITY DOES NOTHING
+    Now: correlation with orders is -0.105 (basically zero).
+    Change: orders = density / 60 * zone_type_multiplier
+            (commercial 1.30, mixed 1.00, residential 0.85)
+
+9.  SPEED IS RANDOM FOR EVERY PAIR
+    Now: the same zone shows speeds from 16.5 to 19.7 km/h.
+         So travel time does not depend on distance properly.
+    Change: pick ONE speed per zone, before the loop. Save it as
+            a column in demand_zones.csv.
+
+10. NO DELIVERY PROMISE IN THE DATA
+    Change: add SERVICE_PROMISE_MIN = 15.0 and a within_sla
+            true/false column in travel_time_matrix.csv.
+
+11. RENT IS MONTHLY, SETUP IS ONE TIME - CANNOT ADD THEM
+    Change: add one column:
+            daily_opening_cost = rent/30.4 + setup/(36*30.4)
+            (36 months = 3 year plan)
+
+12. demand_std_dev DOES NOT MATCH THE DEMAND
+    Now: demand uses Poisson, so std should be sqrt(mean).
+         The file uses 15-35% of the value instead.
+    Change: demand_std_dev = sqrt(mean_units)
+
+13. THE "+1" MAKES ALL DEMAND TOO HIGH
+    Now: poisson(mean) + 1 adds 1 to every value (20-30% extra).
+    Change: max(1, poisson(mean))
+
+
+----------------------------------------------------------------
+IMPORTANT - SIZE
+----------------------------------------------------------------
+After all fixes the full data is 11 sites x 20 zones.
+That needs 87 qubits. Our laptop can only simulate about 21.
+
+So we need TWO versions from the same script:
+
+  FULL (11 x 20)  -> for normal computer methods only
+  SMALL (4 x 5)   -> 19 qubits -> for the QAOA part
+
+For the small version, calculate its capacity from its OWN demand.
+If you copy the big capacity numbers, problem 2 comes back.
+
+Suggested small version:
+  Sites: DS01, DS02, DS07, DS08
+  Zones: Z01, Z03, Z05, Z07, Z16
+
+
+----------------------------------------------------------------
+CHECKLIST BEFORE WE ACCEPT THE NEW DATA
+----------------------------------------------------------------
+[ ] items per order is 4 to 6
+[ ] capacity / demand is about 2x
+[ ] no delivery time is 0
+[ ] product shares add to exactly 1.0
+[ ] rent and sqft correlation above 0.8
+[ ] density and orders correlation above 0.8
+[ ] speed is the same for one zone
+[ ] every zone has a store within 15 minutes
+[ ] within_sla column exists
+[ ] daily_opening_cost column exists
+[ ] same seed gives the same CSV files again
+[ ] small version exists and its capacity still matters
+
+================================================================
+Full details with code examples: PONDICHERRY_DATASET_FIXES.txt
+Working example script: generate_pondicherry_v2.py
+================================================================

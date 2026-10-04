@@ -1,0 +1,5 @@
+site_id,area_name,latitude,longitude,capacity_sqft,km_to_town_centre,location_premium,monthly_rent_inr,staff_count,monthly_staff_inr,monthly_utilities_inr,setup_cost_inr,daily_opening_cost_inr,daily_capacity_liters
+DS01,White Town (plot),11.9365,79.834,1000,0.39,1.331,47700,6,96000,22000,330000,5752.19,1400.0
+DS02,Muthialpet (plot),11.94094,79.82989,2000,0.99,1.301,94200,12,192000,44000,585000,11396.38,2800.0
+DS07,Reddiarpalayam (plot),11.94164,79.79901,1200,3.93,1.154,46200,7,112000,26400,421000,6457.05,1675.0
+DS08,Mudaliarpet (plot),11.91271,79.80735,1000,3.67,1.166,41700,6,96000,22000,294000,5521.93,1400.0

@@ -1,0 +1,22 @@
+zone_id,area_name,latitude,longitude,zone_type,population_density_per_sqkm,avg_daily_orders,avg_road_speed_kmph
+Z01,White Town,11.933,79.834,commercial,6338,136,19.03
+Z02,Heritage Town,11.93,79.836,commercial,16609,374,16.83
+Z03,Muthialpet,11.938,79.828,residential,12897,192,25.1
+Z04,Vaithikuppam,11.928,79.838,residential,19634,257,23.81
+Z05,Kuruchikuppam,11.92,79.834,residential,12505,192,24.55
+Z06,Nellithope,11.925,79.82,mixed,10561,187,20.81
+Z07,Uppalam,11.935,79.808,residential,11756,168,22.33
+Z08,Rainbow Nagar,11.945,79.815,residential,8408,127,24.51
+Z09,Gorimedu,11.955,79.82,mixed,7478,121,22.58
+Z10,Lawspet,11.96,79.81,residential,16371,250,25.07
+Z11,Thattanchavady,11.96,79.83,residential,16398,231,22.25
+Z12,Reddiarpalayam,11.945,79.8,mixed,7919,123,21.62
+Z13,Ozhukarai,11.95,79.79,residential,18837,292,23.33
+Z14,Anna Nagar (Pondy),11.935,79.795,residential,16171,223,23.88
+Z15,Ilango Nagar,11.96,79.8,residential,16935,222,23.91
+Z16,Mudaliarpet,11.915,79.81,mixed,7842,124,21.57
+Z17,Kurumbapet,11.91,79.83,residential,19104,289,24.77
+Z18,Ariyankuppam,11.885,79.808,residential,11557,158,25.28
+Z19,Kalapet,12.008,79.839,mixed,11528,188,20.29
+Z20,Auroville Fringe,12.0067,79.81,residential,17071,251,22.62
+Z21,Villianur,11.95,79.75,residential,17491,223,25.1

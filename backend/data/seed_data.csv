@@ -1,0 +1,7 @@
+store_key,name,area,latitude,longitude,opening_cost,storage_capacity,platform,is_candidate,data_source,notes
+PDY-VN-01,Venkata Nagar Hub 1,Venkata Nagar,11.9416,79.8083,7800,3800,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Area confirmed by user (3 stores in Venkata Nagar). Coordinates are an approximate area centroid, NOT a surveyed address. Cost and capacity are DEMO values."
+PDY-VN-02,Venkata Nagar Hub 2,Venkata Nagar,11.9448,79.8051,8600,4000,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Second of 3 user-confirmed Venkata Nagar stores. Coordinates approximate. Cost and capacity are DEMO values."
+PDY-VN-03,Venkata Nagar Hub 3,Venkata Nagar,11.9385,79.8112,6900,3200,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Third of 3 user-confirmed Venkata Nagar stores. Coordinates approximate. Cost and capacity are DEMO values."
+PDY-LP-01,Lawspet Hub,Lawspet,11.9600,79.8100,9200,4200,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Area confirmed by user (1 store in Lawspet). Coordinates approximate. Cost and capacity are DEMO values."
+PDY-MO-01,Marie Oulgaret Hub,Marie Oulgaret,11.9294,79.8006,8100,3600,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Area confirmed by user (1 store in Marie Oulgaret). Coordinates approximate. Cost and capacity are DEMO values."
+PDY-KN-01,Krishna Nagar Hub,Krishna Nagar,11.9522,79.8152,7400,3400,unmapped,TRUE,APPROX_AREA_CENTROID+DEMO_ASSUMPTION,"Area confirmed by user (1 store in Krishna Nagar). Coordinates approximate. Cost and capacity are DEMO values."

@@ -1,0 +1,4 @@
+product_id,product_name,volume_per_unit,profit_per_unit,penalty_per_unit
+P1,Milk & Bread,1.0,12,25
+P2,Snacks,1.5,20,15
+P3,Household Care,2.5,35,10

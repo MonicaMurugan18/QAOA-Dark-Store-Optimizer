@@ -1,0 +1,1980 @@
+{
+ "version": 0.6,
+ "generator": "Overpass API 0.7.62.11 87bfad18",
+ "osm3s": {
+  "timestamp_osm_base": "2026-10-03T04:31:51Z",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+ },
+ "elements": [
+  {
+   "type": "node",
+   "id": 245600130,
+   "lat": 11.9340568,
+   "lon": 79.8306447,
+   "tags": {
+    "alt_name": "Pondicherry",
+    "alt_name:fr": "Pondich\u00e9ry",
+    "capital": "4",
+    "is_capital": "union_territory",
+    "name": "Puducherry",
+    "name:ar": "\u0628\u0648\u062f\u0648\u062a\u0634\u064a\u0631\u064a",
+    "name:bh": "\u092a\u093e\u0902\u0921\u093f\u091a\u0947\u0930\u0940",
+    "name:bn": "\u09aa\u09c1\u09a1\u09c1\u099a\u09c7\u09b0\u09bf",
+    "name:ca": "Pondicherry",
+    "name:cs": "Puttu\u010d\u010d\u00e9ri",
+    "name:en": "Puducherry",
+    "name:eo": "Pudu\u0109eri",
+    "name:es": "Puducherry",
+    "name:eu": "Puducherry",
+    "name:fa": "\u067e\u0648\u062f\u0648\u0686\u0631\u06cc",
+    "name:fr": "Poudouch\u00e9ry",
+    "name:ga": "Pondicherry",
+    "name:he": "\u05e4\u05d5\u05d3\u05d5\u05e6'\u05e8\u05d9",
+    "name:hi": "\u092a\u0941\u0926\u0941\u091a\u094d\u091a\u0947\u0930\u0940",
+    "name:hu": "Puduccseri",
+    "name:hy": "\u054a\u0578\u0576\u0564\u056b\u0579\u0565\u0580\u056b",
+    "name:ia": "Pondicherry",
+    "name:id": "Pondicherry",
+    "name:ja": "\u30dd\u30f3\u30c7\u30a3\u30b7\u30a7\u30ea",
+    "name:kn": "\u0caa\u0cc1\u0ca6\u0cc1\u0c9a\u0ccd\u0c9a\u0cc7\u0cb0\u0cc0",
+    "name:ko": "\ud478\ub450\uccb4\ub9ac",
+    "name:ks": "\u067e\u0627\u0646\u0688\u06cc\u0686\u06cc\u0631\u06cc",
+    "name:ku": "Pudu\u00e7er\u00ee",
+    "name:la": "Pondicherium",
+    "name:lt": "Pudu\u010deris",
+    "name:mg": "Pondicherry",
+    "name:ml": "\u0d2a\u0d41\u0d24\u0d41\u0d1a\u0d4d\u0d1a\u0d47\u0d30\u0d3f",
+    "name:mr": "\u092a\u0941\u0926\u094d\u0926\u0941\u091a\u0947\u0930\u0940",
+    "name:ms": "Pondicherry",
+    "name:nb": "Puducherry",
+    "name:ne": "\u092a\u0941\u0926\u0941\u091a\u094d\u091a\u0947\u0930\u0940",
+    "name:nl": "Puducherry",
+    "name:or": "\u0b2a\u0b23\u0b4d\u0b21\u0b3f\u0b1a\u0b47\u0b30\u0b40",
+    "name:pl": "Puducherry",
+    "name:ru": "\u041f\u043e\u043d\u0434\u0438\u0447\u0435\u0440\u0440\u0438",
+    "name:sa": "\u092a\u093e\u0923\u094d\u0921\u0940\u091a\u0947\u0930\u0940\u0928\u0917\u0930\u092e\u094d",
+    "name:sat": "\u1c6f\u1c5a\u1c71\u1c70\u1c64\u1c6a\u1c6e\u1c68\u1c64",
+    "name:sr": "\u041f\u043e\u043d\u0434\u0438\u0448\u0435\u0440\u0438",
+    "name:sv": "Puducherry",
+    "name:ta": "\u0baa\u0bc1\u0ba4\u0bc1\u0b9a\u0bcd\u0b9a\u0bc7\u0bb0\u0bbf",
+    "name:te": "\u0c2a\u0c41\u0c26\u0c41\u0c1a\u0c4d\u0c1a\u0c47\u0c30\u0c3f",
+    "name:tr": "Pudu\u00e7eri",
+    "name:tt": "\u041f\u043e\u043d\u0434\u0438\u0448\u0435\u0440\u0438",
+    "name:uk": "\u041f\u0443\u0434\u0443\u0447\u0435\u0440\u0440\u0456",
+    "name:ur": "\u067e\u062f\u0648\u0686\u06cc\u0631\u06cc",
+    "name:uz": "Pondisheri",
+    "name:vi": "Pondicherry",
+    "name:zh": "\u672c\u5730\u6cbb\u91cc",
+    "old_name": "Pondicherry",
+    "old_name:fr": "Pondich\u00e9ry",
+    "place": "city",
+    "place:cca": "b2",
+    "population": "100000",
+    "postal_code": "605001",
+    "wikidata": "Q639421",
+    "wikipedia": "en:Pondicherry"
+   }
+  },
+  {
+   "type": "node",
+   "id": 315137869,
+   "lat": 12.0073927,
+   "lon": 79.8099471,
+   "tags": {
+    "community": "intentional",
+    "name": "Auroville",
+    "name:en": "Auroville",
+    "name:eo": "A\u016drorurbo",
+    "name:kn": "\u0c86\u0cb0\u0ccb\u0cb5\u0cbf\u0cb2\u0ccd",
+    "name:ml": "\u0d13\u0d31\u0d4b\u0d35\u0d3f\u0d7d",
+    "name:ta": "\u0b86\u0bb0\u0bcb\u0bb5\u0bbf\u0bb2\u0bcd",
+    "name:zh": "\u9ece\u660e\u4e4b\u6751",
+    "place": "town",
+    "wikidata": "Q590361",
+    "wikipedia": "en:Auroville"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986915,
+   "lat": 11.9963322,
+   "lon": 79.7785631,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Tiruchitrambalam",
+    "name:ml": "\u0d24\u0d3f\u0d30\u0d41\u0d1a\u0d4d\u0d1a\u0d3f\u0d31\u0d4d\u0d31\u0d2e\u0d4d\u0d2a\u0d32\u0d02",
+    "name:ta": "\u0ba4\u0bbf\u0bb0\u0bc1\u0b9a\u0bcd\u0b9a\u0bbf\u0bb1\u0bcd\u0bb1\u0bae\u0bcd\u0baa\u0bb2\u0bae\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986918,
+   "lat": 11.9793334,
+   "lon": 79.7873004,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Morattandi",
+    "name:ml": "\u0d2e\u0d4a\u0d30\u0d1f\u0d4d\u0d1f\u0d3e\u0d23\u0d4d\u0d1f\u0d3f",
+    "name:ta": "\u0bae\u0bca\u0bb0\u0b9f\u0bcd\u0b9f\u0bbe\u0ba3\u0bcd\u0b9f\u0bbf",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986922,
+   "lat": 11.9788045,
+   "lon": 79.7843885,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Service Farm",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986927,
+   "lat": 11.9769411,
+   "lon": 79.7883383,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Promesse",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986940,
+   "lat": 11.9876664,
+   "lon": 79.7922488,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Udayan",
+    "name:hi": "\u0909\u0926\u092f\u0928",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986948,
+   "lat": 11.9877321,
+   "lon": 79.7974256,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Agni",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986986,
+   "lat": 12.0066156,
+   "lon": 79.7872248,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Irumbai",
+    "name:ml": "\u0d07\u0d30\u0d41\u0d2e\u0d4d\u0d2a\u0d48",
+    "name:ta": "\u0b87\u0bb0\u0bc1\u0bae\u0bcd\u0baa\u0bc8",
+    "place": "village",
+    "wikidata": "Q15228817"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582986996,
+   "lat": 12.0003718,
+   "lon": 79.7989943,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Siddartha",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987055,
+   "lat": 12.0208149,
+   "lon": 79.7897814,
+   "tags": {
+    "name": "Sanjeevi Nagar",
+    "name:ml": "\u0d38\u0d1e\u0d4d\u0d1c\u0d40\u0d35\u0d3f \u0d28\u0d17\u0d7c",
+    "name:ta": "\u0b9a\u0b9e\u0bcd\u0b9a\u0bc0\u0bb5\u0bbf \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987069,
+   "lat": 12.0212752,
+   "lon": 79.7980284,
+   "tags": {
+    "name": "Alankuppam",
+    "name:ml": "\u0d06\u0d32\u0d19\u0d4d\u0d15\u0d41\u0d2a\u0d4d\u0d2a\u0d02",
+    "name:ta": "\u0b86\u0bb2\u0b99\u0bcd\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bae\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987084,
+   "lat": 12.0244973,
+   "lon": 79.7997539,
+   "tags": {
+    "name": "Rayapettai",
+    "name:ml": "\u0d30\u0d3e\u0d2f\u0d2a\u0d4d\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0bb0\u0bbe\u0baf\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987098,
+   "lat": 11.972767,
+   "lon": 79.8395691,
+   "tags": {
+    "name": "Kotamedu",
+    "name:ml": "\u0d15\u0d4b\u0d1f\u0d4d\u0d1f\u0d2e\u0d47\u0d1f\u0d4d",
+    "name:ta": "\u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bae\u0bc7\u0b9f\u0bc1",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987107,
+   "lat": 11.9807303,
+   "lon": 79.8136237,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Success",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987109,
+   "lat": 11.9800376,
+   "lon": 79.8185214,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Ravena",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987119,
+   "lat": 11.9818352,
+   "lon": 79.8163488,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Forecomers",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987134,
+   "lat": 11.9906038,
+   "lon": 79.8145918,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Abri",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987136,
+   "lat": 11.9916911,
+   "lon": 79.8074385,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Adventure",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987142,
+   "lat": 11.992831,
+   "lon": 79.8130859,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Evergreen",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987146,
+   "lat": 11.9959298,
+   "lon": 79.8154844,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Certitude",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987151,
+   "lat": 11.9877979,
+   "lon": 79.8178547,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "New Lands",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987153,
+   "lat": 11.99113,
+   "lon": 79.8172273,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Ami",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987160,
+   "lat": 11.9918314,
+   "lon": 79.8183747,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Acceptance",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987162,
+   "lat": 11.9947934,
+   "lon": 79.8191274,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Gratitude",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987169,
+   "lat": 11.9954528,
+   "lon": 79.8261983,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Light",
+    "name:ta": "\u0b92\u0bb3\u0bbf",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987172,
+   "lat": 11.9851078,
+   "lon": 79.8371484,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Shakti",
+    "name:ta": "\u0b9a\u0b95\u0bcd\u0ba4\u0bbf",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987173,
+   "lat": 11.9857436,
+   "lon": 79.8346043,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Aspiration",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987189,
+   "lat": 11.9777972,
+   "lon": 79.8440108,
+   "tags": {
+    "name": "Chinna Mudaliar Chavadi",
+    "name:ta": "\u0b9a\u0bbf\u0ba9\u0bcd\u0ba9 \u0bae\u0bc1\u0ba4\u0bb2\u0bbf\u0baf\u0bbe\u0bb0\u0bcd \u0b9a\u0bbe\u0bb5\u0b9f\u0bbf",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987201,
+   "lat": 11.9829488,
+   "lon": 79.8466552,
+   "tags": {
+    "name": "Periya Mudaliar Chavadi",
+    "name:ta": "\u0baa\u0bc6\u0bb0\u0bbf\u0baf \u0bae\u0bc1\u0ba4\u0bb2\u0bbf\u0baf\u0bbe\u0bb0\u0bcd \u0b9a\u0bbe\u0bb5\u0b9f\u0bbf",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987208,
+   "lat": 11.9867608,
+   "lon": 79.8314473,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Aureka",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987215,
+   "lat": 11.9870152,
+   "lon": 79.8323386,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Pour Tous",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987235,
+   "lat": 11.993514,
+   "lon": 79.8309468,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "New Creation",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987242,
+   "lat": 11.9964629,
+   "lon": 79.8306445,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Arya",
+    "name:ta": "\u0b86\u0bb0\u0bcd\u0baf\u0bbe",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987253,
+   "lat": 11.9935728,
+   "lon": 79.8337711,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Fraternity",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987254,
+   "lat": 11.9911336,
+   "lon": 79.836054,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Douceur",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987255,
+   "lat": 11.9964629,
+   "lon": 79.8364532,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Djaima",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987258,
+   "lat": 11.9875843,
+   "lon": 79.8391284,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Agni Jata",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987259,
+   "lat": 11.9898853,
+   "lon": 79.8409368,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Auromodele",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987269,
+   "lat": 11.9934326,
+   "lon": 79.8379018,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Petite Ferme",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987273,
+   "lat": 11.9941481,
+   "lon": 79.8397663,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Akashwa",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987275,
+   "lat": 11.9953264,
+   "lon": 79.8407527,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Gaia's Garden",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987277,
+   "lat": 11.9974153,
+   "lon": 79.8112823,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Courage",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987279,
+   "lat": 12.0007907,
+   "lon": 79.8147872,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Creativity",
+    "name:ta": "\u0baa\u0b9f\u0bc8\u0baa\u0bcd\u0baa\u0bbe\u0bb1\u0bcd\u0bb1\u0bb2\u0bcd",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987280,
+   "lat": 12.0010913,
+   "lon": 79.8132562,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sailam",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987289,
+   "lat": 12.0049004,
+   "lon": 79.8150429,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Arka",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987306,
+   "lat": 11.9985427,
+   "lon": 79.8183861,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Samasti",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987307,
+   "lat": 11.998669,
+   "lon": 79.8159479,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Prarthana",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987314,
+   "lat": 12.0023969,
+   "lon": 79.8168591,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Arati",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987316,
+   "lat": 12.0012644,
+   "lon": 79.8168084,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Prayatna",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987317,
+   "lat": 11.9998185,
+   "lon": 79.8186973,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sharnga",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987319,
+   "lat": 12.0033557,
+   "lon": 79.8158956,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Invocation",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987320,
+   "lat": 12.0047892,
+   "lon": 79.8162311,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Surrender",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987325,
+   "lat": 12.0076252,
+   "lon": 79.8191145,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Gaia",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987333,
+   "lat": 12.0099267,
+   "lon": 79.8081783,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Shanti",
+    "name:ta": "\u0b9a\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987334,
+   "lat": 12.0111131,
+   "lon": 79.8066693,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Darkali",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987338,
+   "lat": 12.0148804,
+   "lon": 79.8105391,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Horizon",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987343,
+   "lat": 12.0151874,
+   "lon": 79.8055339,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Yantra",
+    "name:ta": "\u0baf\u0ba8\u0bcd\u0ba4\u0bcd\u0bb0\u0bbe",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987347,
+   "lat": 12.0170944,
+   "lon": 79.8050633,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Silence",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987350,
+   "lat": 12.010629,
+   "lon": 79.8166122,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Kalabhumi",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987351,
+   "lat": 12.0125789,
+   "lon": 79.8175681,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Transformation",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987356,
+   "lat": 12.012031,
+   "lon": 79.8231931,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Meadow",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987359,
+   "lat": 12.0168217,
+   "lon": 79.8163422,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Minati",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987397,
+   "lat": 12.0085645,
+   "lon": 79.8287868,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Two Banyans",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987398,
+   "lat": 12.0132508,
+   "lon": 79.828926,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Fertile East",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987401,
+   "lat": 12.0130691,
+   "lon": 79.8315909,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Aurogreen",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987406,
+   "lat": 12.0154668,
+   "lon": 79.8316652,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Nilatangam",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987424,
+   "lat": 12.0200711,
+   "lon": 79.8068357,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Discipline",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 582987427,
+   "lat": 12.0227714,
+   "lon": 79.809747,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Nine Palms",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 712969459,
+   "lat": 12.0106332,
+   "lon": 79.8109102,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Joy",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 734840218,
+   "lat": 12.0155036,
+   "lon": 79.8129578,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Revelation Forest",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 734849969,
+   "lat": 12.0119702,
+   "lon": 79.8116157,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Bliss Forest",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 804984193,
+   "lat": 12.0139225,
+   "lon": 79.8117372,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sve Dame",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1024711895,
+   "lat": 12.0018471,
+   "lon": 79.8097143,
+   "tags": {
+    "is_in": "Auroville",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1027538864,
+   "lat": 12.0166884,
+   "lon": 79.8108484,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Auromode",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1080593355,
+   "lat": 11.9147104,
+   "lon": 79.8241099,
+   "tags": {
+    "name": "Harbour",
+    "name:fr": "Havre",
+    "name:ta": "\u0ba4\u0bc1\u0bb1\u0bc8\u0bae\u0bc1\u0b95\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1108695441,
+   "lat": 12.0014725,
+   "lon": 79.8209453,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sangha",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1321442481,
+   "lat": 12.0017024,
+   "lon": 79.8147094,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Realization",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1350977792,
+   "lat": 12.002492,
+   "lon": 79.807191,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Centre Field",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1535284364,
+   "lat": 12.0073015,
+   "lon": 79.8251971,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Samriddhi",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1546961600,
+   "lat": 12.004586,
+   "lon": 79.8180896,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Grace",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1551778784,
+   "lat": 12.0031889,
+   "lon": 79.8046429,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Harmony Centre",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1672666120,
+   "lat": 12.0150931,
+   "lon": 79.79971,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Windarra Farm / Terrasoul",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690133291,
+   "lat": 11.992449,
+   "lon": 79.850507,
+   "tags": {
+    "name": "Bommayapalayam",
+    "name:ml": "\u0d2c\u0d4a\u0d2e\u0d4d\u0d2e\u0d2f\u0d2a\u0d3e\u0d33\u0d2f\u0d02",
+    "name:ta": "\u0baa\u0bca\u0bae\u0bcd\u0bae\u0baf\u0baa\u0bbe\u0bb3\u0bc8\u0baf\u0bae\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690133297,
+   "lat": 11.9945644,
+   "lon": 79.8430208,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Felicity",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690133303,
+   "lat": 11.9899203,
+   "lon": 79.8322527,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Kuilapalayam",
+    "name:ml": "\u0d15\u0d41\u0d2f\u0d3f\u0d32\u0d3e\u0d2a\u0d4d\u0d2a\u0d3e\u0d33\u0d2f\u0d02",
+    "name:ta": "\u0b95\u0bc1\u0baf\u0bbf\u0bb2\u0bbe\u0baa\u0bcd\u0baa\u0bbe\u0bb3\u0bc8\u0baf\u0bae\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690207082,
+   "lat": 11.9850134,
+   "lon": 79.7905642,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Auro-Orchard",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690207087,
+   "lat": 11.9868425,
+   "lon": 79.7892208,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "AuroAnnam",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690207091,
+   "lat": 11.9873979,
+   "lon": 79.7846632,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Aurobrindavan",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690207092,
+   "lat": 11.9940723,
+   "lon": 79.8034857,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Edayanchavadi",
+    "name:ml": "\u0d07\u0d1f\u0d2f\u0d1e\u0d4d\u0d1a\u0d3e\u0d35\u0d1f\u0d3f",
+    "name:ta": "\u0b87\u0b9f\u0bc8\u0baf\u0ba9\u0bcd\u0b9a\u0bbe\u0bb5\u0b9f\u0bbf",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690207101,
+   "lat": 11.9855512,
+   "lon": 79.7929253,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Hope",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251709,
+   "lat": 12.0240665,
+   "lon": 79.802879,
+   "tags": {
+    "is_in": "Puducherry",
+    "name": "Annainagar",
+    "name:ml": "\u0d05\u0d28\u0d4d\u0d28\u0d48 \u0d28\u0d17\u0d7c",
+    "name:ta": "\u0b85\u0ba9\u0bcd\u0ba9\u0bc8 \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251713,
+   "lat": 12.0047373,
+   "lon": 79.8213768,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Anusuya",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251729,
+   "lat": 12.0166357,
+   "lon": 79.8092031,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Auroshilpam",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251776,
+   "lat": 12.0131962,
+   "lon": 79.8205365,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Dana",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251800,
+   "lat": 12.0169969,
+   "lon": 79.8209059,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Baraka",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251806,
+   "lat": 12.0170738,
+   "lon": 79.8274129,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Fertile",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251837,
+   "lat": 12.0128997,
+   "lon": 79.7965393,
+   "tags": {
+    "is_in": "Tamil Nadu",
+    "name": "Kottakarai",
+    "name:ml": "\u0d15\u0d4b\u0d1f\u0d4d\u0d1f\u0d15\u0d4d\u0d15\u0d30",
+    "name:ta": "\u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0bb0\u0bc8",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251848,
+   "lat": 12.0033879,
+   "lon": 79.8186745,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Madhuca",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251864,
+   "lat": 12.0232463,
+   "lon": 79.8048939,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Martuvam Healing Forest",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690251871,
+   "lat": 11.9950813,
+   "lon": 79.8229394,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Pitchandikulam Forest",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690254180,
+   "lat": 12.004935,
+   "lon": 79.8251467,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Samriddhi",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690254191,
+   "lat": 12.010657,
+   "lon": 79.8090605,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sincerity",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690254200,
+   "lat": 12.0026725,
+   "lon": 79.8190875,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sukhavati",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690254220,
+   "lat": 12.0029982,
+   "lon": 79.8201697,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Victory",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2376447939,
+   "lat": 12.0007374,
+   "lon": 79.8180306,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Maitreye",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2895131926,
+   "lat": 11.9132643,
+   "lon": 79.7550761,
+   "tags": {
+    "name": "Villianur",
+    "name:ml": "\u0d35\u0d3f\u0d32\u0d4d\u0d32\u0d3f\u0d2f\u0d28\u0d42\u0d7c",
+    "name:ta": "\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bbf\u0baf\u0ba9\u0bc2\u0bb0\u0bcd",
+    "place": "town",
+    "wikidata": "Q6163058"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3195672161,
+   "lat": 12.026482,
+   "lon": 79.820036,
+   "tags": {
+    "name": "Kamataru",
+    "name:en": "Kamataru",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3636652022,
+   "lat": 11.9567295,
+   "lon": 79.8281206,
+   "tags": {
+    "name": "Karuvadikuppam",
+    "name:ml": "\u0d15\u0d30\u0d41\u0d35\u0d1f\u0d3f\u0d15\u0d4d\u0d15\u0d41\u0d2a\u0d4d\u0d2a\u0d02",
+    "name:ta": "\u0b95\u0bb0\u0bc1\u0bb5\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3636974447,
+   "lat": 11.9546226,
+   "lon": 79.8119343,
+   "tags": {
+    "name": "Lawspet",
+    "name:en": "Lawspet",
+    "name:ml": "\u0d32\u0d4b\u0d38\u0d4d\u200c\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0bb2\u0bbe\u0bb8\u0bcd\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3638864563,
+   "lat": 11.8948712,
+   "lon": 79.8075867,
+   "tags": {
+    "name": "Ariyankuppam",
+    "name:ml": "\u0d05\u0d30\u0d3f\u0d2f\u0d3e\u0d19\u0d4d\u0d15\u0d41\u0d2a\u0d4d\u0d2a\u0d02",
+    "name:ta": "\u0b85\u0bb0\u0bbf\u0baf\u0bbe\u0b99\u0bcd\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3638864565,
+   "lat": 11.9178044,
+   "lon": 79.8119484,
+   "tags": {
+    "name": "Mudaliarpet",
+    "name:ml": "\u0d2e\u0d41\u0d24\u0d32\u0d3f\u0d2f\u0d3e\u0d7c\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0bae\u0bc1\u0ba4\u0bb2\u0bbf\u0baf\u0bbe\u0bb0\u0bcd\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3638864566,
+   "lat": 11.8913854,
+   "lon": 79.7521127,
+   "tags": {
+    "name": "Uruvaiyar",
+    "name:ml": "\u0d09\u0d31\u0d41\u0d35\u0d2f\u0d3e\u0d7c",
+    "name:ta": "\u0b89\u0bb1\u0bc1\u0bb5\u0bc8\u0baf\u0bbe\u0bb1\u0bc1",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3638864567,
+   "lat": 11.8938348,
+   "lon": 79.8245701,
+   "tags": {
+    "name": "Veerampattinam",
+    "name:azb": "\u0648\u06cc\u0631\u0627\u0645\u067e\u0627\u062a\u06cc\u0646\u0627\u0645",
+    "name:fa": "\u0648\u06cc\u0631\u0645\u067e\u062a\u06cc\u0646\u0645",
+    "name:fr": "Veerampattinam",
+    "name:ml": "\u0d35\u0d40\u0d30\u0d3e\u0d02\u0d2a\u0d1f\u0d4d\u0d1f\u0d23\u0d02",
+    "name:ta": "\u0bb5\u0bc0\u0bb0\u0bbe\u0bae\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bbf\u0ba9\u0bae\u0bcd",
+    "place": "village",
+    "wikidata": "Q7918162"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591494,
+   "lat": 11.9488099,
+   "lon": 79.796179,
+   "tags": {
+    "name": "Dhanvantari Nagar",
+    "name:ta": "\u0ba4\u0ba9\u0bcd\u0bb5\u0ba8\u0bcd\u0ba4\u0bb0\u0bbf \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591495,
+   "lat": 11.936527,
+   "lon": 79.8296109,
+   "tags": {
+    "name": "Grand Bazaar",
+    "name:ml": "\u0d2a\u0d46\u0d30\u0d3f\u0d2f\u0d15\u0d1f",
+    "name:ta": "\u0baa\u0bc6\u0bb0\u0bbf\u0baf\u0b95\u0b9f\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591496,
+   "lat": 11.9407413,
+   "lon": 79.7865038,
+   "tags": {
+    "name": "Mettupalayam",
+    "name:ta": "\u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0baa\u0bcd\u0baa\u0bbe\u0bb3\u0bc8\u0baf\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591497,
+   "lat": 11.9292854,
+   "lon": 79.828295,
+   "tags": {
+    "name": "Odiansalai",
+    "name:ml": "\u0d12\u0d24\u0d3f\u0d2f\u0d7b\u0d38\u0d3e\u0d32\u0d48",
+    "name:ta": "\u0b92\u0ba4\u0bbf\u0baf\u0ba9\u0bcd\u0b9a\u0bbe\u0bb2\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591498,
+   "lat": 11.9404136,
+   "lon": 79.8144854,
+   "tags": {
+    "name": "Saram",
+    "name:ta": "\u0b9a\u0bbe\u0bb0\u0bae\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639591499,
+   "lat": 11.9289108,
+   "lon": 79.7949611,
+   "tags": {
+    "name": "Reddiarpalayam",
+    "name:ml": "\u0d31\u0d46\u0d21\u0d4d\u0d21\u0d3f\u0d2f\u0d3e\u0d7c\u0d2a\u0d3e\u0d33\u0d2f\u0d02",
+    "name:ta": "\u0bb0\u0bc6\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bbe\u0bb0\u0bcd\u0baa\u0bbe\u0bb3\u0bc8\u0baf\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3639594179,
+   "lat": 12.030844,
+   "lon": 79.8648402,
+   "tags": {
+    "name": "Kalapet",
+    "name:ml": "\u0d15\u0d3e\u0d32\u0d2a\u0d4d\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0b95\u0bbe\u0bb2\u0bbe\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bc1",
+    "place": "village",
+    "wikidata": "Q3702557",
+    "wikipedia:ta": "https://ta.wikipedia.org/wiki/%E0%AE%95%E0%AE%BE%E0%AE%B2%E0%AE%BE%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%81"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3903184156,
+   "lat": 12.0105642,
+   "lon": 79.8121536,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Citadines",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3903349146,
+   "lat": 11.9999399,
+   "lon": 79.8037653,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sacred Groves",
+    "place": "neighbourhood",
+    "website": "http://sacredgroves.in"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3956160673,
+   "lat": 11.9950634,
+   "lon": 79.830483,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "New Creation Field",
+    "place": "neighbourhood",
+    "website": "http://bon-auroville.com"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4023981451,
+   "lat": 12.0133868,
+   "lon": 79.8594642,
+   "tags": {
+    "is_in": "Auroville",
+    "name": "Sri Ma",
+    "operator": "Auroville",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4024150393,
+   "lat": 11.9760016,
+   "lon": 79.8448541,
+   "tags": {
+    "name": "Quiet",
+    "operator": "Auroville",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5051302123,
+   "lat": 12.003552,
+   "lon": 79.8313006,
+   "tags": {
+    "name": "Udumbu",
+    "name:ta": "\u0b89\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc1",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5149401421,
+   "lat": 12.0201515,
+   "lon": 79.8235458,
+   "tags": {
+    "name": "Fertile Field",
+    "name:en": "Fertile Field",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5268622817,
+   "lat": 11.9306851,
+   "lon": 79.7838563,
+   "tags": {
+    "name": "Moolakulam",
+    "name:ml": "\u0d2e\u0d42\u0d32\u0d15\u0d41\u0d33\u0d02",
+    "name:ta": "\u0bae\u0bc2\u0bb2\u0b95\u0bc1\u0bb3\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5294938295,
+   "lat": 11.9386708,
+   "lon": 79.8202606,
+   "tags": {
+    "name": "Sithankudi",
+    "name:ml": "\u0d38\u0d3f\u0d26\u0d4d\u0d27\u0d7b\u0d15\u0d41\u0d1f\u0d3f",
+    "name:ta": "\u0b9a\u0bbf\u0ba4\u0bcd\u0ba4\u0ba9\u0bcd\u0b95\u0bc1\u0b9f\u0bbf",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5294938296,
+   "lat": 11.9397249,
+   "lon": 79.8177792,
+   "tags": {
+    "name": "Brindavanam",
+    "name:ml": "\u0d2c\u0d43\u0d28\u0d4d\u0d26\u0d3e\u0d35\u0d28\u0d02",
+    "name:ta": "\u0baa\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bbe\u0bb5\u0ba9\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5327855244,
+   "lat": 11.956098,
+   "lon": 79.8382923,
+   "tags": {
+    "name": "Solai Nagar",
+    "name:ml": "\u0d38\u0d4b\u0d32\u0d48 \u0d28\u0d17\u0d7c",
+    "name:ta": "\u0b9a\u0bcb\u0bb2\u0bc8 \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5354029087,
+   "lat": 12.0095376,
+   "lon": 79.8110256,
+   "tags": {
+    "name": "Town Hall",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5575460619,
+   "lat": 11.9377671,
+   "lon": 79.812211,
+   "tags": {
+    "name": "Kosapalayam",
+    "name:ml": "\u0d15\u0d4a\u0d38\u0d2a\u0d4d\u0d2a\u0d3e\u0d33\u0d2f\u0d02",
+    "name:ta": "\u0b95\u0bca\u0b9a\u0baa\u0bcd\u0baa\u0bbe\u0bb3\u0bc8\u0baf\u0bae\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5645232810,
+   "lat": 11.9353137,
+   "lon": 79.8233035,
+   "tags": {
+    "name": "Bharathipuram",
+    "name:ml": "\u0d2d\u0d3e\u0d30\u0d24\u0d3f\u0d2a\u0d41\u0d30\u0d02",
+    "name:ta": "\u0baa\u0bbe\u0bb0\u0ba4\u0bbf\u0baa\u0bc1\u0bb0\u0bae\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5645232811,
+   "lat": 11.9469942,
+   "lon": 79.8088972,
+   "tags": {
+    "name": "Pakkamudayampet",
+    "name:ml": "\u0d2a\u0d3e\u0d15\u0d4d\u0d15\u0d41\u0d2e\u0d41\u0d1f\u0d2f\u0d3e\u0d7b\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0baa\u0bbe\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bc1\u0b9f\u0bc8\u0baf\u0bbe\u0ba9\u0bcd\u0baa\u0bc7\u0b9f\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5645251603,
+   "lat": 11.9383403,
+   "lon": 79.8052315,
+   "tags": {
+    "name": "Periyar Nagar",
+    "name:ta": "\u0baa\u0bc6\u0bb0\u0bbf\u0baf\u0bbe\u0bb0\u0bcd \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5662526314,
+   "lat": 11.9380184,
+   "lon": 79.8009588,
+   "tags": {
+    "name": "Aaruthra Nagar",
+    "name:ta": "\u0b86\u0bb0\u0bc1\u0ba4\u0bcd\u0bb0\u0bbe \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5662526315,
+   "lat": 11.9419544,
+   "lon": 79.7999201,
+   "tags": {
+    "name": "Thilaspet",
+    "name:ta": "\u0ba4\u0bbf\u0bb2\u0bbe\u0b9a\u0bc1\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5662554353,
+   "lat": 11.9420585,
+   "lon": 79.7946064,
+   "tags": {
+    "name": "Kathirkamam",
+    "name:ta": "\u0b95\u0ba4\u0bbf\u0bb0\u0bcd\u0b95\u0bbe\u0bae\u0bae\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5662572537,
+   "lat": 11.9535324,
+   "lon": 79.7936091,
+   "tags": {
+    "name": "Gorimedu",
+    "name:ta": "\u0b95\u0bcb\u0bb0\u0bbf\u0bae\u0bc7\u0b9f\u0bc1",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5665498685,
+   "lat": 11.9399081,
+   "lon": 79.8227716,
+   "tags": {
+    "name": "Venkata Nagar",
+    "name:ta": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0b9f\u0bbe \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5668534979,
+   "lat": 11.9517574,
+   "lon": 79.8343629,
+   "tags": {
+    "name": "Muthialpet",
+    "name:ml": "\u0d2e\u0d41\u0d24\u0d4d\u0d24\u0d3f\u0d2f\u0d3e\u0d7d\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0bae\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf\u0baf\u0bbe\u0bb2\u0bcd\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5668534980,
+   "lat": 11.9496135,
+   "lon": 79.8221326,
+   "tags": {
+    "name": "Krishna Nagar",
+    "name:ta": "\u0b95\u0bbf\u0bb0\u0bc1\u0bb7\u0bcd\u0ba3\u0bbe \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5668534981,
+   "lat": 11.94415,
+   "lon": 79.8250456,
+   "tags": {
+    "name": "Rainbow Nagar",
+    "name:ta": "\u0bb0\u0bc6\u0baf\u0bbf\u0ba9\u0bcd\u0baa\u0bcb \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5669620705,
+   "lat": 11.9423726,
+   "lon": 79.8041088,
+   "tags": {
+    "name": "VVP Nagar",
+    "name:ta": "\u0bb5\u0bbf\u0bb5\u0bbf\u0baa\u0bbf \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5670034768,
+   "lat": 11.9510508,
+   "lon": 79.8007547,
+   "tags": {
+    "name": "JIPMER Campus",
+    "name:ta": "\u0b9c\u0bbf\u0baa\u0bcd\u0bae\u0bb0\u0bcd \u0bb5\u0bb3\u0bbe\u0b95\u0bae\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5702915509,
+   "lat": 11.9390064,
+   "lon": 79.799476,
+   "tags": {
+    "name": "Sri Ram Nagar",
+    "name:ta": "\u0bb8\u0bcd\u0bb0\u0bc0\u0bb0\u0bbe\u0bae\u0bcd \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6033450475,
+   "lat": 12.0376683,
+   "lon": 79.7539647,
+   "tags": {
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6083143710,
+   "lat": 12.0165451,
+   "lon": 79.8558141,
+   "tags": {
+    "name": "Pondicherry Central University",
+    "name:ta": "\u0baa\u0bbe\u0ba3\u0bcd\u0b9f\u0bbf\u0b9a\u0bcd\u0b9a\u0bc7\u0bb0\u0bbf \u0bae\u0ba4\u0bcd\u0ba4\u0bbf\u0baf \u0baa\u0bb2\u0bcd\u0b95\u0bb2\u0bc8\u0b95\u0bcd\u0b95\u0bb4\u0b95\u0bae\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6224899745,
+   "lat": 11.9335551,
+   "lon": 79.7913196,
+   "tags": {
+    "addr:street": "Jaya nagar, Reddiarpalayam, Pondicherry",
+    "name": "BSNL Staff Quarters",
+    "name:ta": "BSNL \u0b8a\u0bb4\u0bbf\u0baf\u0bb0\u0bcd \u0b95\u0bc1\u0b9f\u0bbf\u0baf\u0bbf\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7082552149,
+   "lat": 12.0217346,
+   "lon": 79.8192305,
+   "tags": {
+    "name": "NFA",
+    "name:en": "NFA",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8399185365,
+   "lat": 11.9441528,
+   "lon": 79.7939953,
+   "tags": {
+    "name": "Anandha Nagar",
+    "name:ta": "\u0b86\u0ba9\u0ba8\u0bcd\u0ba4\u0bbe \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8399208639,
+   "lat": 11.925466,
+   "lon": 79.8024885,
+   "tags": {
+    "name": "Raghavendra Nagar",
+    "name:ta": "\u0bb0\u0bbe\u0b95\u0bb5\u0bc7\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbe \u0ba8\u0b95\u0bb0\u0bcd",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8410631304,
+   "lat": 11.9499121,
+   "lon": 79.7933337,
+   "tags": {
+    "name": "Police Quarters",
+    "name:ta": "\u0b95\u0bbe\u0bb5\u0bb2\u0bb0\u0bcd \u0b95\u0bc1\u0b9f\u0bbf\u0baf\u0bbf\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1",
+    "place": "quarter"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8661349788,
+   "lat": 11.9683008,
+   "lon": 79.7935456,
+   "tags": {
+    "name": "Pattanur",
+    "name:ml": "\u0d2a\u0d1f\u0d4d\u0d1f\u0d28\u0d42\u0d7c",
+    "name:ta": "\u0baa\u0b9f\u0bcd\u0b9f\u0ba9\u0bc2\u0bb0\u0bcd",
+    "place": "suburb"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9065390322,
+   "lat": 11.9414045,
+   "lon": 79.8064577,
+   "tags": {
+    "alt_name:en": "Uzhavarkarai",
+    "name": "Ozhukarai",
+    "name:en": "Oulgaret",
+    "name:ml": "\u0d09\u0d34\u0d35\u0d7c\u0d15\u0d4d\u0d15\u0d30",
+    "name:ta": "\u0b89\u0bb4\u0bb5\u0bb0\u0bcd\u0b95\u0bb0\u0bc8",
+    "place": "town",
+    "wikidata": "Q277708"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9818721578,
+   "lat": 12.0452106,
+   "lon": 79.8725558,
+   "tags": {
+    "name": "Hollywood Farm Beach",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11124188410,
+   "lat": 12.0114964,
+   "lon": 79.8187801,
+   "tags": {
+    "name": "Devashakti",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11710432822,
+   "lat": 11.880441,
+   "lon": 79.7470404,
+   "tags": {
+    "name": "Korkadu",
+    "name:ml": "\u0d15\u0d4b\u0d7c\u0d15\u0d4d\u0d15\u0d3e\u0d1f\u0d4d",
+    "name:ta": "\u0b95\u0bcb\u0bb0\u0bcd\u0b95\u0bbe\u0b9f\u0bc1",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11728015258,
+   "lat": 12.0408014,
+   "lon": 79.8690462,
+   "tags": {
+    "alt_name": "Kanagasettikulam",
+    "alt_name:ta": "\u0b95\u0ba9\u0b95\u0b9a\u0bc6\u0b9f\u0bcd\u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bae\u0bcd",
+    "name": "Ganapathichettikulam",
+    "name:ml": "\u0d17\u0d23\u0d2a\u0d24\u0d3f\u0d1a\u0d46\u0d1f\u0d4d\u0d1f\u0d3f\u0d15\u0d41\u0d33\u0d02",
+    "name:ta": "\u0b95\u0ba3\u0baa\u0ba4\u0bbf\u0b9a\u0bc6\u0b9f\u0bcd\u0b9f\u0bbf\u0b95\u0bc1\u0bb3\u0bae\u0bcd",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11728015259,
+   "lat": 12.0560932,
+   "lon": 79.8745614,
+   "tags": {
+    "name": "Kilputhupattu",
+    "name:ml": "\u0d15\u0d40\u0d34\u0d4d\u0d2a\u0d41\u0d24\u0d4d\u0d24\u0d41\u0d2a\u0d4d\u0d2a\u0d1f\u0d4d\u0d1f\u0d4d",
+    "name:ta": "\u0b95\u0bc0\u0bb4\u0bcd\u0baa\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bc1",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11728015262,
+   "lat": 11.990396,
+   "lon": 79.7502697,
+   "tags": {
+    "name": "Sedarapet",
+    "name:ml": "\u0d1a\u0d47\u0d24\u0d3e\u0d30\u0d2a\u0d4d\u0d2a\u0d47\u0d1f\u0d4d\u0d1f",
+    "name:ta": "\u0b9a\u0bc7\u0ba4\u0bbe\u0bb0\u0baa\u0bcd\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+    "place": "village"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11765771289,
+   "lat": 11.9676624,
+   "lon": 79.8378289,
+   "tags": {
+    "description": "Kottakuppam Municipality",
+    "name": "Kottakuppam",
+    "name:ar": "\u0643\u0648\u062a\u0627\u0643\u0648\u0628\u0627\u0645",
+    "name:ml": "\u0d15\u0d4b\u0d1f\u0d4d\u0d1f\u0d15\u0d4d\u0d15\u0d41\u0d2a\u0d4d\u0d2a\u0d02",
+    "name:ta": "\u0b95\u0bcb\u0b9f\u0bcd\u0b9f\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bae\u0bcd",
+    "place": "town",
+    "wikidata": "Q2236719",
+    "wikipedia": "en:Kottakuppam"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13677251500,
+   "lat": 12.0023773,
+   "lon": 79.8038438,
+   "tags": {
+    "name": "Aurodam",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13677260401,
+   "lat": 12.0190271,
+   "lon": 79.8108352,
+   "tags": {
+    "name": "Miracle",
+    "place": "neighbourhood"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13978126313,
+   "lat": 11.9298541,
+   "lon": 79.7975237,
+   "tags": {
+    "addr:street": "Reddiarpalayam, Puducherry",
+    "name": "Kaveri Nagar",
+    "place": "suburb"
+   }
+  }
+ ]
+}

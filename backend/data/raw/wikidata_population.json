@@ -1,0 +1,168 @@
+{
+ "head": {
+  "vars": [
+   "placeLabel",
+   "pop",
+   "lat",
+   "lon"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "41816"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Mah\u00e9 district"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "11.7"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "75.533333333333"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "3288"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Auroville"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "12.001793"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "79.800943"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "55626"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Yanam district"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "16.733333333333"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "82.25"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "200222"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Karaikal district"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "11.016666666667"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "79.866666666667"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "300104"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Uzhavarkarai"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "11.956980555556"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "79.7737"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "1394467"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Puducherry"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "11.93"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "79.83"
+    }
+   },
+   {
+    "pop": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+     "type": "literal",
+     "value": "950289"
+    },
+    "placeLabel": {
+     "xml:lang": "en",
+     "type": "literal",
+     "value": "Puducherry district"
+    },
+    "lat": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "11.93"
+    },
+    "lon": {
+     "datatype": "http://www.w3.org/2001/XMLSchema#double",
+     "type": "literal",
+     "value": "79.83"
+    }
+   }
+  ]
+ }
+}

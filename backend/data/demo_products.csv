@@ -1,0 +1,7 @@
+product_key,name,category,unit_volume,unit_cost,data_source,notes
+SKU01,Fresh Milk 1L,Dairy,1.0,58,DEMO_ASSUMPTION,"Representative quick-commerce SKU. Price is an illustrative retail figure, not sourced from any operator."
+SKU02,Bread Loaf,Bakery,0.5,42,DEMO_ASSUMPTION,"Representative SKU. Illustrative price."
+SKU03,Bottled Water 1L,Beverages,1.0,22,DEMO_ASSUMPTION,"Representative SKU. Illustrative price."
+SKU04,Eggs 12 pack,Dairy,0.8,82,DEMO_ASSUMPTION,"Representative SKU. Illustrative price. Not used by the 3x3x3 dev instance."
+SKU05,Potato Chips,Snacks,0.15,38,DEMO_ASSUMPTION,"Representative SKU. Illustrative price. Not used by the 3x3x3 dev instance."
+SKU06,Dish Wash Liquid,Household,0.6,105,DEMO_ASSUMPTION,"Representative SKU. Illustrative price. Not used by the 3x3x3 dev instance."

@@ -1,0 +1,482 @@
+================================================================================
+DATASET REVIEW: qaoa_dataset_pondicherry
+Changes needed before we use it for the QAOA dark-store project
+================================================================================
+
+Project: QAOA for Joint Dark Store Location Selection and Inventory Allocation
+         in Hyperlocal Quick Commerce
+File reviewed: generate_dataset_pondicherry.py and the 6 CSVs it produces
+Date: 11 September 2026
+
+--------------------------------------------------------------------------------
+SUMMARY
+--------------------------------------------------------------------------------
+The schema and the geography are good. Twelve problems were found in the
+numbers, three of which make the optimisation problem meaningless (there is
+literally nothing to optimise as the data stands). A thirteenth problem
+(an unreachable zone) appears once the others are fixed.
+
+All of these are in the generator script, not in the CSVs. Fix the script and
+regenerate; do not hand-edit the CSVs.
+
+--------------------------------------------------------------------------------
+WHAT IS ALREADY GOOD (do not change these)
+--------------------------------------------------------------------------------
+* Reproducible. Regenerating with seed 42 reproduces all six CSVs exactly.
+  This was verified. Keep the seeding.
+* Real Puducherry neighbourhood names and plausible latitude/longitude.
+* Haversine distance x 1.30 circuity factor is a reasonable road-distance model.
+* site_to_site_distance.csv is complete (45 rows = 10 choose 2) and consistent.
+* Clean file schema, one concept per file. Keep it.
+
+--------------------------------------------------------------------------------
+PRIORITY
+--------------------------------------------------------------------------------
+Must fix (the model does not work without these):   1, 2, 3, 13
+Should fix (results will not be defensible):        4, 5, 6
+Good to fix (reviewer will ask):                    7, 8, 9, 10, 11, 12
+
+================================================================================
+CRITICAL PROBLEMS
+================================================================================
+
+--------------------------------------------------------------------------------
+PROBLEM 1 - Demand is 10 times too small. Orders and SKU demand contradict
+            each other.
+--------------------------------------------------------------------------------
+WHERE   Section 4 of the generator, the zone x SKU demand loop:
+
+            mean_demand = max(1, zone_orders * share
+                              * np.random.uniform(0.8, 1.2) / 10)
+
+WHAT IS WRONG
+        The "/ 10" is unexplained and wrong. Measured result across all
+        20 zones:
+
+            zone_id  avg_daily_orders  total_sku_units  units_per_order
+            Z01                   217               33            0.152
+            Z02                   288               43            0.149
+            Z03                   123               21            0.171
+            (min 0.101, mean 0.161, max 0.248 across all zones)
+
+        Every order contains between 0.10 and 0.25 items. That is physically
+        impossible - an order contains at least one item. A real quick-commerce
+        basket is 4 to 6 items.
+
+        So demand_zones.csv and zone_sku_demand.csv are describing two
+        different worlds, and any cost computed from them is meaningless.
+
+CHANGE TO MAKE
+        Delete the "/ 10" and multiply by a basket size instead:
+
+            ITEMS_PER_ORDER = 5.0     # define at the top of the file
+
+            mean_units = zone_orders * ITEMS_PER_ORDER * sku_share
+
+RESULT AFTER FIX
+        4.42 to 5.24 items per order.
+
+--------------------------------------------------------------------------------
+PROBLEM 2 - The capacity constraint can never be violated. 284x oversupply.
+            THIS IS THE MOST SERIOUS ONE.
+--------------------------------------------------------------------------------
+WHERE   Section 1, the max_sku_units line:
+
+            max_sku_units = int(capacity_sqft * np.random.uniform(8, 12))
+
+WHAT IS WRONG
+        Measured:
+            total daily SKU units demanded :        559
+            total max_inventory_units      :    158,673
+            ratio                          :     283.9x
+            smallest single store          :      8,185 units
+                                            (serves the whole city 14x over)
+
+        With capacity this loose, EVERY siting plan is feasible. The optimal
+        answer degenerates to "open the one cheapest store and send all
+        20 zones to it". There is no allocation decision left, so the
+        inventory-allocation half of our project has nothing to solve.
+
+        The deeper issue is a unit mismatch: max_inventory_units is a STOCK
+        level, while demand is a DAILY FLOW. They are not comparable without a
+        days-of-cover factor.
+
+        For reference, our working Chennai prototype has total demand 1,647
+        against total capacity 3,550 (2.2x), and the optimum opens 2 of 4
+        stores. That is what a live constraint looks like.
+
+CHANGE TO MAKE
+        Build demand FIRST, then size capacity against it. Express both in
+        litres so the SKU volumes actually matter:
+
+            CAPACITY_SLACK = 2.2      # total capacity / total daily demand
+
+            total_volume = sum over zones of (units x unit_volume_liters)
+            total_sqft   = sum of capacity_sqft over all sites
+
+            daily_capacity_liters[i] = round(
+                CAPACITY_SLACK * total_volume * sqft[i] / total_sqft / 25) * 25
+
+        This keeps capacity_sqft meaningful (bigger plot = bigger store) while
+        forcing the constraint to bind.
+
+RESULT AFTER FIX
+        Capacity / demand = 2.20x. Largest single store holds 0.32x of total
+        demand, so at least 4 stores must open. Now there is a real decision.
+
+--------------------------------------------------------------------------------
+PROBLEM 3 - Nine of the ten sites sit exactly on a demand zone, giving
+            0.00 minute delivery times.
+--------------------------------------------------------------------------------
+WHERE   The candidate_sites list and the demand_zones list reuse the same
+        coordinates for the same neighbourhood names. Also section 5, which
+        has no handling time.
+
+WHAT IS WRONG
+        These nine pairs all have road_distance_km = 0.0 and
+        travel_time_min = 0.0:
+
+            DS01/Z01  DS02/Z03  DS03/Z10  DS04/Z19  DS05/Z18
+            DS06/Z13  DS07/Z12  DS08/Z16  DS09/Z11
+
+        Zero-minute delivery is not possible. There is no picking or packing
+        time anywhere in the model. These nine pairs will win every assignment
+        for free and completely bias the result.
+
+CHANGE TO MAKE
+        (a) Add a handling time floor to every pair. Our Chennai model uses
+            3 minutes for picking and packing:
+
+                HANDLING_MIN = 3.0
+                travel_time_min = HANDLING_MIN + (road_km / speed) * 60
+
+        (b) Offset the site coordinates so a candidate PLOT is near a
+            neighbourhood but not identical to the zone centroid. About 390 m
+            is enough:
+
+                SITE_OFFSET_DEG = 0.0035
+                angle = 2 * pi * i / number_of_sites
+                site_lat = lat + SITE_OFFSET_DEG * cos(angle)
+                site_lon = lon + SITE_OFFSET_DEG * sin(angle)
+
+            Rename them "White Town (plot)" etc. so it is clear these are
+            candidate properties, not the neighbourhood itself.
+
+RESULT AFTER FIX
+        Zero 0-minute pairs. Fastest delivery is 4.19 minutes.
+
+--------------------------------------------------------------------------------
+PROBLEM 13 - One demand zone has no store that can reach it in time.
+             (This only becomes visible after problems 1-3 are fixed.)
+--------------------------------------------------------------------------------
+WHAT IS WRONG
+        With correct travel times, Z20 (Auroville Fringe) has NO candidate site
+        inside the 15-minute promise:
+
+            nearest plot DS04 -> 15.13 minutes, against a 15.00 minute promise
+
+        It misses by eight seconds. An unreachable zone makes the instance
+        ill posed: no solution can serve everybody, so the model is broken
+        before it starts.
+
+CHANGE TO MAKE
+        Add a real candidate site that covers the north. Kuilapalayam is the
+        village on Auroville's edge:
+
+            ("DS11", "Kuilapalayam", 11.9958, 79.8175)
+
+        DO NOT fix this by relaxing the SLA to 16 minutes. The 15-minute
+        promise is the defining constraint of the whole project - the data
+        should fit the promise, not the other way round.
+
+        Also add a permanent check at the end of the generator so this can
+        never slip through again:
+
+            zones_with_a_server = travel[travel.within_sla].zone_id.nunique()
+            assert zones_with_a_server == len(demand_zones), "unreachable zone"
+
+RESULT AFTER FIX
+        20 of 20 zones covered. Servers per zone: min 1, median 4, max 7.
+
+================================================================================
+SERIOUS PROBLEMS
+================================================================================
+
+--------------------------------------------------------------------------------
+PROBLEM 4 - Category shares add up to 1.18 instead of 1.00.
+--------------------------------------------------------------------------------
+WHERE   Section 4, the category_share dictionary.
+
+WHAT IS WRONG
+        The dictionary values sum to 1.00 across the seven categories. But
+        Dairy contains TWO SKUs (SKU01 Fresh Milk and SKU03 Eggs), and the
+        full 0.18 Dairy share is applied to each of them separately.
+
+            sum over categories : 1.00
+            sum applied per-SKU : 1.18
+
+        Dairy gets double weight and all demand totals are 18% too high.
+
+CHANGE TO MAKE
+        Divide each category's share among the SKUs in that category:
+
+            n_in_category = count of SKUs per category
+            sku_share[sku] = CATEGORY_SHARE[category] / n_in_category[category]
+
+        So Dairy becomes 0.09 for milk and 0.09 for eggs.
+
+        Add an assertion so it cannot drift again:
+
+            assert abs(sum(sku_share.values()) - 1.0) < 1e-9
+
+RESULT AFTER FIX
+        Shares sum to exactly 1.0000.
+
+--------------------------------------------------------------------------------
+PROBLEM 5 - unit_volume_liters exists in skus.csv but is never used.
+--------------------------------------------------------------------------------
+WHAT IS WRONG
+        SKU volumes range from 0.15 litres (potato chips) to 1.20 litres
+        (bananas), but store capacity is a flat unit COUNT. So a packet of
+        chips takes the same shelf space as a bottle of water. The column is
+        present and dead.
+
+CHANGE TO MAKE
+        Carry volume through to demand and express capacity in litres:
+
+            demand_volume_liters = avg_daily_demand_units * unit_volume_liters
+
+        Add demand_volume_liters as a column in zone_sku_demand.csv, and use
+        daily_capacity_liters in candidate_dark_stores.csv (see problem 2).
+
+RESULT AFTER FIX
+        14,422 litres per day total demand, directly comparable to capacity.
+
+--------------------------------------------------------------------------------
+PROBLEM 6 - Rent has almost nothing to do with store size or location.
+--------------------------------------------------------------------------------
+WHERE   Section 1:
+
+            rent = np.random.randint(35000, 90000)
+            setup_cost = np.random.randint(250000, 650000)
+            capacity_sqft = np.random.choice([1000, 1200, 1500, 1800, 2000])
+
+WHAT IS WRONG
+        These are three completely independent random draws.
+
+            correlation(rent, capacity_sqft)  = 0.262
+            correlation(setup, capacity_sqft) = 0.285
+
+        Concretely:
+            DS07 Reddiarpalayam  1,200 sqft  Rs 76,434/month  = Rs 63.7/sqft
+            DS04 Kalapet         2,000 sqft  Rs 51,023/month  = Rs 25.5/sqft
+
+        A 2.5x price-per-sqft inversion, and White Town (the premium French
+        Quarter) comes out cheaper per sqft than Reddiarpalayam.
+
+        This means the choice of which store to open is decided by the random
+        number generator, not by geography or economics. The whole point of
+        the project is to make that decision meaningfully.
+
+CHANGE TO MAKE
+        Make rent a price per square foot times a location premium based on
+        distance to the town centre:
+
+            RENT_PER_SQFT_BASE = 35.0          # INR / sqft / month
+            TOWN_CENTRE = (11.9330, 79.8340)   # White Town
+
+            d = haversine_km(site_lat, site_lon, *TOWN_CENTRE)
+            premium = clip(1.35 - 0.05 * d, 0.80, 1.35)
+            rent = sqft * RENT_PER_SQFT_BASE * premium * uniform(0.95, 1.05)
+
+        And make setup cost proportional to floor area:
+
+            setup = sqft * uniform(280, 360)    # INR / sqft fit-out
+
+RESULT AFTER FIX
+        correlation(rent, sqft) = 0.907. Rent per sqft ranges Rs 29.5 to 48.0
+        (was Rs 25.5 to 63.7), with the premium now tracking distance from the
+        centre as it should.
+
+================================================================================
+GOOD TO FIX
+================================================================================
+
+--------------------------------------------------------------------------------
+PROBLEM 7 - population_density_per_sqkm is decorative.
+--------------------------------------------------------------------------------
+WHAT IS WRONG
+        Density and orders are drawn independently, so density never affects
+        anything:
+
+            correlation(population_density, avg_daily_orders) = -0.105
+
+        Essentially zero, and slightly negative - denser zones order slightly
+        LESS. A reviewer will spot this.
+
+CHANGE TO MAKE
+        Derive orders from density:
+
+            ORDERS_PER_DENSITY = 1 / 60.0
+            ZONE_TYPE_MULT = {"commercial": 1.30, "mixed": 1.00,
+                              "residential": 0.85}
+
+            orders = density * ORDERS_PER_DENSITY
+                     * ZONE_TYPE_MULT[zone_type] * uniform(0.90, 1.10)
+
+RESULT AFTER FIX
+        correlation = +0.873.
+
+--------------------------------------------------------------------------------
+PROBLEM 8 - Travel speed is randomised separately for every site-zone pair.
+--------------------------------------------------------------------------------
+WHERE   Section 5, inside the double loop:
+
+            speed = AVG_SPEED_KMPH[ztype] * np.random.uniform(0.9, 1.1)
+
+WHAT IS WRONG
+        A fresh speed is drawn for each of the 200 pairs. Measured implied
+        speeds within a single zone type:
+
+            commercial   16.54 to 19.73 km/h
+            mixed        18.97 to 22.90 km/h
+            residential  21.65 to 26.37 km/h
+
+        Consequences: travel time is NOT a function of distance (two pairs at
+        the same distance get different times), and the time matrix violates
+        the triangle inequality. That is not a road network.
+
+CHANGE TO MAKE
+        Draw one speed per ZONE, before the loop, and reuse it:
+
+            zone_speed[zone_id] = AVG_SPEED_KMPH[ztype] * uniform(0.92, 1.08)
+
+        Store it as a column (avg_road_speed_kmph) in demand_zones.csv so it
+        is auditable.
+
+RESULT AFTER FIX
+        Speed spread within a zone: 0.02 km/h (was up to 3.2 km/h).
+
+--------------------------------------------------------------------------------
+PROBLEM 9 - There is no SLA / delivery promise anywhere in the data.
+--------------------------------------------------------------------------------
+WHAT IS WRONG
+        The 10-to-15-minute delivery promise is the defining constraint of
+        hyperlocal quick commerce, and the single thing that makes our quantum
+        encoding small enough to run. It is not in the dataset at all.
+
+CHANGE TO MAKE
+        Define it and mark every pair:
+
+            SERVICE_PROMISE_MIN = 15.0
+            within_sla = (delivery_time_min <= SERVICE_PROMISE_MIN)
+
+        Add within_sla as a column in travel_time_matrix.csv. Also rename
+        travel_time_min to delivery_time_min, since it now includes handling.
+
+--------------------------------------------------------------------------------
+PROBLEM 10 - Rent is monthly, setup is one-time, and they cannot be added.
+--------------------------------------------------------------------------------
+WHAT IS WRONG
+        The objective function needs ONE number per store for "cost of opening
+        it". We have a monthly rent and a one-time fit-out cost in different
+        time units, with no amortisation horizon given.
+
+CHANGE TO MAKE
+        Add a derived column with the horizon stated explicitly:
+
+            AMORTISE_MONTHS = 36        # 3-year horizon
+            DAYS_PER_MONTH  = 30.4
+
+            daily_opening_cost_inr = rent / DAYS_PER_MONTH
+                                   + setup / (AMORTISE_MONTHS * DAYS_PER_MONTH)
+
+RESULT AFTER FIX
+        Rs 1,416 to Rs 3,394 per day across the 11 sites.
+
+--------------------------------------------------------------------------------
+PROBLEM 11 - demand_std_dev contradicts the process that generated the demand.
+--------------------------------------------------------------------------------
+WHERE   Section 4:
+
+            demand_std = round(avg_daily_demand * np.random.uniform(0.15, 0.35), 2)
+
+WHAT IS WRONG
+        Demand is generated from a Poisson distribution, whose standard
+        deviation is sqrt(mean). But the std column is a separate, unrelated
+        15-35% of the realised value.
+
+        For a mean of 4: true Poisson std is 2.0, the file says about 1.0.
+
+        If anyone later does stochastic or robust optimisation with these
+        numbers, the mean and the std are describing different distributions.
+
+CHANGE TO MAKE
+            demand_std_dev = round(sqrt(mean_units), 2)
+
+        If we want overdispersion (real demand is burstier than Poisson),
+        switch to a negative binomial and state the dispersion parameter.
+        Do not just invent a std.
+
+--------------------------------------------------------------------------------
+PROBLEM 12 - The "+1" inflates every demand value.
+--------------------------------------------------------------------------------
+WHERE   Section 4:
+
+            avg_daily_demand = int(np.random.poisson(mean_demand) + 1)
+
+WHAT IS WRONG
+        Adding 1 shifts the whole distribution, so the realised mean is
+        mean + 1, not mean. With means around 3 to 5, that is a 20-30%
+        inflation on top of everything else.
+
+CHANGE TO MAKE
+            units = max(1, int(rng.poisson(mean_units)))
+
+        max(1, ...) keeps demand positive without shifting the distribution.
+
+================================================================================
+ONE MORE THING: SIZE
+================================================================================
+Even after every fix, the full instance is too large to run QAOA on:
+
+    11 sites x 20 zones -> 76 SLA-feasible pairs -> 87 qubits
+
+Our laptop simulation wall is about 21 qubits (2^21 states). 87 qubits is
+astronomically beyond that.
+
+So we need TWO datasets from the same generator:
+
+    Full instance (11 x 20)  -> classical baselines only
+                                (greedy, simulated annealing, exact)
+
+    Sub-instance (4 x 5)     -> 15 SLA-feasible pairs -> 19 qubits
+                                small enough to simulate QAOA
+
+IMPORTANT: when carving out the sub-instance, re-size its capacities against
+ITS OWN demand. Otherwise problem 2 comes straight back at the sub-instance
+level and the capacity constraint stops binding again.
+
+Current sub-instance: sites DS01, DS02, DS07, DS08 and zones Z01, Z03, Z05,
+Z07, Z16. Demand 2,851 L/day, capacity 6,250 L/day (2.19x), at least 2 stores
+must open, all 5 zones covered.
+
+================================================================================
+CHECKLIST BEFORE WE ACCEPT THE CORRECTED DATASET
+================================================================================
+[ ]  items per order is between 4 and 6
+[ ]  total capacity / total demand is between 2x and 3x
+[ ]  no delivery time equals 0
+[ ]  SKU demand shares sum to exactly 1.0
+[ ]  correlation(rent, capacity_sqft) is above 0.8
+[ ]  correlation(density, orders) is above 0.8
+[ ]  implied speed is constant within each zone
+[ ]  every zone has at least one site inside the 15-minute promise
+[ ]  travel_time_matrix.csv has a within_sla column
+[ ]  candidate_dark_stores.csv has a daily_opening_cost_inr column
+[ ]  regenerating with the same seed reproduces the CSVs exactly
+[ ]  a sub-instance of about 15-19 qubits exists and its capacity still binds
+
+================================================================================
+END
+================================================================================

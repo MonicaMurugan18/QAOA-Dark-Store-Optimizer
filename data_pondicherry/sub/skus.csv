@@ -1,0 +1,9 @@
+sku_id,sku_name,category,unit_cost_inr,holding_cost_per_unit_per_day_inr,unit_volume_liters,shelf_life_days,is_perishable,demand_share
+SKU01,Fresh Milk 1L,Dairy,58,0.9,1.0,2,True,0.09
+SKU02,Bread Loaf,Bakery,42,0.7,0.5,3,True,0.1
+SKU03,Eggs (12 pack),Dairy,82,1.0,0.8,10,True,0.09
+SKU04,Bananas (1 dozen),Fruits & Veg,50,0.6,1.2,4,True,0.15
+SKU05,Instant Noodles (pack),Packaged Food,52,0.3,0.4,240,False,0.14
+SKU06,Bottled Water 1L,Beverages,22,0.2,1.0,365,False,0.16
+SKU07,Potato Chips,Snacks,38,0.3,0.15,180,False,0.15
+SKU08,Dish Wash Liquid,Household,105,0.4,0.6,730,False,0.12

@@ -1,0 +1,5 @@
+store_id,store_name,x_km,y_km,opening_cost,capacity_units
+S1,Anna Nagar Hub,2.0,6.0,9000,1000
+S2,T Nagar Hub,5.0,4.3,12000,1200
+S3,Velachery Hub,7.5,1.5,7000,600
+S4,Adyar Hub,5.5,1.0,8500,750

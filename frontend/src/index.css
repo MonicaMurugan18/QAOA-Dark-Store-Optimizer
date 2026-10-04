@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Tailwind 4 uses CSS-first configuration: design tokens are declared here
+   with @theme instead of in a tailwind.config.js file. */
+@theme {
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #d9e5ff;
+  --color-brand-200: #bcd2ff;
+  --color-brand-300: #8eb4ff;
+  --color-brand-400: #598bfc;
+  --color-brand-500: #3465f0;
+  --color-brand-600: #2049dd;
+  --color-brand-700: #1b39b2;
+  --color-brand-800: #1c338c;
+  --color-brand-900: #1c2f6f;
+
+  --color-ink-50: #f7f8fa;
+  --color-ink-100: #eef0f4;
+  --color-ink-200: #dde1e9;
+  --color-ink-300: #c2c8d6;
+  --color-ink-400: #8d97ab;
+  --color-ink-500: #5f6b82;
+  --color-ink-600: #45506580;
+  --color-ink-700: #333c4e;
+  --color-ink-800: #212936;
+  --color-ink-900: #141a24;
+  --color-ink-950: #0c1017;
+
+  /* The landing page deliberately adds no palette of its own: it is built from
+     the same brand-* / ink-* tokens the optimizer dashboard uses, so the two
+     read as one application. */
+  --color-canvas: #f7f9fc;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Landing-page anchor links scroll smoothly; honoured only when the visitor
+   has not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-50);
+  color: var(--color-ink-800);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures keep money and runtime columns from jittering as values
+   change between runs. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet sits inside rounded cards; clip its tiles to match. */
+.leaflet-container {
+  font: inherit;
+  background: var(--color-ink-100);
+}
+
+.leaflet-popup-content {
+  margin: 0.625rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-300);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------- landing-page animations */
+
+/* Scoped to .lp-* classes used only by the landing page, so the optimizer
+   dashboard is unaffected. Tuned for the light surface the dashboard uses:
+   small movements and soft shadows, nothing flashy. Disabled when the visitor
+   has asked for reduced motion. */
+
+/* Section entry. The element is visible by default and the observer only adds
+   the settled state, so content never depends on the animation running. */
+.lp-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lp-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .lp-reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Slow drift on the faint hero grid. 56px matches the cell, so it loops
+     seamlessly. */
+  .lp-grid-drift {
+    animation: lp-grid-drift 40s linear infinite;
+  }
+}
+
+@keyframes lp-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 56px 56px;
+  }
+}
+
+/* Card hover, matching the dashboard's shadow weight rather than exceeding it. */
+.lp-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lp-card:hover {
+  border-color: var(--color-brand-300);
+  box-shadow: 0 4px 16px -6px rgba(32, 73, 221, 0.22);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .lp-card:hover {
+    transform: translateY(-2px);
+  }
+}

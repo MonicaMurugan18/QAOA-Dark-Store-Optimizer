@@ -1,0 +1,6 @@
+zone_id,area_name,latitude,longitude,zone_type,population_density_per_sqkm,avg_daily_orders,avg_road_speed_kmph
+Z01,White Town,11.933,79.834,commercial,6338,136,19.03
+Z03,Muthialpet,11.938,79.828,residential,12897,192,25.1
+Z05,Kuruchikuppam,11.92,79.834,residential,12505,192,24.55
+Z07,Uppalam,11.935,79.808,residential,11756,168,22.33
+Z16,Mudaliarpet,11.915,79.81,mixed,7842,124,21.57

@@ -1,0 +1,875 @@
+{
+ "version": 0.6,
+ "generator": "Overpass API 0.7.62.11 87bfad18",
+ "osm3s": {
+  "timestamp_osm_base": "2026-10-03T04:40:55Z",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+ },
+ "elements": [
+  {
+   "type": "node",
+   "id": 1024711897,
+   "lat": 12.0014609,
+   "lon": 79.8104399,
+   "tags": {
+    "name": "PTDC - Pour Tous Distribution Center",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1669879862,
+   "lat": 11.985059,
+   "lon": 79.8445471,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1690133309,
+   "lat": 11.9875061,
+   "lon": 79.8330627,
+   "tags": {
+    "name": "Pour Tous",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3309356121,
+   "lat": 11.9383714,
+   "lon": 79.8295076,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:country": "IN",
+    "addr:housenumber": "87",
+    "addr:postcode": "605001",
+    "addr:street": "Sri Aurobindo Street",
+    "name": "Rathna Departmental Store",
+    "name:fr": "Supermarch\u00e9 See Rathna",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "payment:cash": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3309357129,
+   "lat": 11.9384342,
+   "lon": 79.8299819,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:country": "IN",
+    "addr:housenumber": "81",
+    "addr:postcode": "605001",
+    "addr:street": "Rue Aurobindo",
+    "name": "Green City",
+    "opening_hours": "Mo-Su 09:30-22:00",
+    "shop": "supermarket",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3309740188,
+   "lat": 11.9346554,
+   "lon": 79.8308528,
+   "tags": {
+    "brand": "Nilgiri's",
+    "brand:wikidata": "Q17079567",
+    "name": "Nilgiri's",
+    "name:fr": "Supermarch\u00e9 Nilgiris",
+    "opening_hours": "Mo-Su,PH 09:00-21:30",
+    "phone": "2336604",
+    "phone2": "4200255",
+    "shop": "supermarket",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3316840719,
+   "lat": 11.9303365,
+   "lon": 79.8340347,
+   "tags": {
+    "name": "Soci\u00e9t\u00e9 d'honn\u00eatet\u00e9",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3319387064,
+   "lat": 11.9334149,
+   "lon": 79.8306344,
+   "tags": {
+    "name": "Porte de l'\u00e9glise",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3333282430,
+   "lat": 11.9351448,
+   "lon": 79.83513,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:housenumber": "25",
+    "addr:postcode": "605001",
+    "addr:street": "Rue Saint-Louis",
+    "description": "mineral water available",
+    "name": "Grinde",
+    "opening_hours": "We-Mo,PH 10:00-22:00",
+    "phone": "0413-4210232",
+    "shop": "supermarket",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3408570983,
+   "lat": 11.9293772,
+   "lon": 79.828109,
+   "tags": {
+    "name": "Magasins de S. B.",
+    "opening_hours": "PH,Mo-Su 08:00-10:00",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3410849722,
+   "lat": 11.9395969,
+   "lon": 79.8292715,
+   "tags": {
+    "air_conditioning": "yes",
+    "check_date": "2026-06-16",
+    "currency:INR": "yes",
+    "internet_access": "no",
+    "name": "Sri Vijaya Ganapathy Stores",
+    "name:fr": "Magasins de Vijaya Ganapathy",
+    "name:ta": "\u0bb8\u0bcd\u0bb0\u0bc0 \u0bb5\u0bbf\u0b9c\u0baf\u0b95\u0ba3\u0baa\u0ba4\u0bbf \u0bb8\u0bcd\u0b9f\u0bcb\u0bb0\u0bcd\u0bb8\u0bcd",
+    "opening_hours": "PH,Mo-Su 09:00-21:30,08:00-18:00+",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:google_pay": "yes",
+    "payment:upi": "yes",
+    "second_hand": "no",
+    "shop": "supermarket",
+    "stroller": "yes",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3596952903,
+   "lat": 11.9574005,
+   "lon": 79.8165977,
+   "tags": {
+    "name": "Uzhavar Santhai (Lawspet)",
+    "opening_hours": "PH,Mo-Su 05:00-12:00",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 3942854935,
+   "lat": 11.9276811,
+   "lon": 79.83262,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:postcode": "605001",
+    "addr:street": "Rue du Bazar Saint-Laurent",
+    "name": "Les Epicerie et Magasin de Prami",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5131021307,
+   "lat": 12.0254237,
+   "lon": 79.799605,
+   "tags": {
+    "name": "Grocery Store",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5234274433,
+   "lat": 11.9465073,
+   "lon": 79.8114639,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:postcode": "605008",
+    "addr:street": "ECR (Chennai Road)",
+    "check_date:opening_hours": "2025-06-22",
+    "name": "Sri Vijayaganapathy stores",
+    "opening_hours": "Mo-Su 09:00-21:00",
+    "operator:type": "private",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5234364723,
+   "lat": 11.949916,
+   "lon": 79.8107558,
+   "tags": {
+    "name": "Foodland supermarket",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5234919226,
+   "lat": 11.9274913,
+   "lon": 79.810368,
+   "tags": {
+    "name": "P. Siva Kumar Stores",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5263116618,
+   "lat": 11.9377013,
+   "lon": 79.8202557,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5263214966,
+   "lat": 11.9412328,
+   "lon": 79.8179736,
+   "tags": {
+    "addr:floor": "G",
+    "air_conditioning": "no",
+    "changing_table": "no",
+    "check_date": "2026-09-11",
+    "currency:INR": "yes",
+    "internet_access": "no",
+    "level": "0",
+    "payment:cash": "yes",
+    "payment:upi": "yes",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5267698045,
+   "lat": 11.9386457,
+   "lon": 79.8350911,
+   "tags": {
+    "description": "Street Vendor (moveable) ",
+    "name": "Vegetable Vendor",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5272218072,
+   "lat": 11.9392447,
+   "lon": 79.8011283,
+   "tags": {
+    "name": "Darshini Provisional Store",
+    "opening_hours": "Mo-Sa 07:00-22:00",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5275226221,
+   "lat": 11.9421184,
+   "lon": 79.7988443,
+   "tags": {
+    "addr:housenumber": "188",
+    "addr:street": "Vazhudavur Road, Thilaspet",
+    "name": "Sri Venkateshwara Super Market",
+    "phone": "2271557",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5292875765,
+   "lat": 11.9385547,
+   "lon": 79.8295158,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:postcode": "605001",
+    "addr:street": "Sri Aurobindo Street",
+    "changing_table": "no",
+    "check_date": "2026-05-23",
+    "currency:INR": "yes",
+    "internet_access": "no",
+    "name": "Aruna Cost Price Shop",
+    "name:ta": "\u0b85\u0bb0\u0bc1\u0ba3\u0bbe \u0b95\u0bbe\u0bb8\u0bcd\u0b9f\u0bcd \u0baa\u0bbf\u0bb0\u0bc8\u0bb8\u0bcd \u0bb7\u0bbe\u0baa\u0bcd",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:google_pay": "yes",
+    "payment:upi": "yes",
+    "second_hand": "no",
+    "shop": "supermarket",
+    "toilets": "no",
+    "wheelchair": "no"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5294919730,
+   "lat": 11.9150296,
+   "lon": 79.8030821,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5294938293,
+   "lat": 11.9528129,
+   "lon": 79.7960919,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5300880730,
+   "lat": 11.9366948,
+   "lon": 79.8195735,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5304538928,
+   "lat": 11.9148101,
+   "lon": 79.807849,
+   "tags": {
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5327844720,
+   "lat": 11.9566878,
+   "lon": 79.8366936,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:postcode": "605003",
+    "addr:street": "Salai Street",
+    "name": "Al Jannat Stationary",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5350124421,
+   "lat": 12.0045387,
+   "lon": 79.7868371,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5350875721,
+   "lat": 11.9963318,
+   "lon": 79.8063276,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5350883321,
+   "lat": 11.9949285,
+   "lon": 79.8024535,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5353072332,
+   "lat": 11.947114,
+   "lon": 79.8029406,
+   "tags": {
+    "name": "Convenience store",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5361840017,
+   "lat": 11.9480847,
+   "lon": 79.8129658,
+   "tags": {
+    "name": "Amudhasurabhi",
+    "opening_hours": "PH,Mo-Su 08:00-22:00",
+    "operator:type": "cooperative",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5477575263,
+   "lat": 11.9341744,
+   "lon": 79.8288394,
+   "tags": {
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5518743064,
+   "lat": 11.9398622,
+   "lon": 79.8299422,
+   "tags": {
+    "brand": "Patanjali Ayurved",
+    "brand:wikidata": "Q19856023",
+    "name": "Patanjali Store",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5530556108,
+   "lat": 11.937124,
+   "lon": 79.8180616,
+   "tags": {
+    "name": "Arunachalam Stores",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5557291993,
+   "lat": 11.9535195,
+   "lon": 79.8051462,
+   "tags": {
+    "addr:street": "Annai Priyadharshini street (2nd cross street kurinji nagar)",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5568457968,
+   "lat": 11.9434671,
+   "lon": 79.8349968,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:postcode": "605001",
+    "addr:street": "Padmini thottam",
+    "name": "Achaya Store",
+    "name:ta": "\u0b85\u0b95\u0bcd\u200c\u0bb7\u0baf\u0bbe \u0bb8\u0bcd\u0b9f\u0bcb\u0bb0\u0bcd",
+    "payment:cash": "yes",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5574994790,
+   "lat": 11.9345689,
+   "lon": 79.8229397,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:housenumber": "5",
+    "addr:postcode": "605011",
+    "addr:street": "Pudutheru",
+    "name": "Sree venkateswara store",
+    "payment:cash": "yes",
+    "phone": "9786853991",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5646229551,
+   "lat": 11.9398277,
+   "lon": 79.8236367,
+   "tags": {
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5646229557,
+   "lat": 11.9389193,
+   "lon": 79.8264714,
+   "tags": {
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6057817324,
+   "lat": 11.9420915,
+   "lon": 79.7990856,
+   "tags": {
+    "addr:street": "Vazhuthavur road, Gandhi Nagar",
+    "name": "Home Needs",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6100084736,
+   "lat": 11.9351021,
+   "lon": 79.8004029,
+   "tags": {
+    "check_date": "2024-09-06",
+    "name": "Thillai Supermarket",
+    "name:ta": "\u0ba4\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8 \u0b9a\u0bc2\u0baa\u0bcd\u0baa\u0bb0\u0bcd \u0bae\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bc6\u0b9f\u0bcd",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6252873185,
+   "lat": 11.9590191,
+   "lon": 79.8289906,
+   "tags": {
+    "name:en": "Rose Nuts",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7020201191,
+   "lat": 11.9286512,
+   "lon": 79.8241472,
+   "tags": {
+    "name:ko": "\uc2dc\uc7a5",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7052465186,
+   "lat": 11.9354119,
+   "lon": 79.8310795,
+   "tags": {
+    "name": "Chitra",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7162173722,
+   "lat": 11.9108867,
+   "lon": 79.8097317,
+   "tags": {
+    "addr:housenumber": "109",
+    "addr:street": "cuddalore main road",
+    "name": "Thanalakshi super market",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7183761390,
+   "lat": 11.9267895,
+   "lon": 79.8058359,
+   "tags": {
+    "addr:street": "2nd Main Road Ext, Jhansi Nagar",
+    "name": "Subam maligai",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7616465778,
+   "lat": 11.9387888,
+   "lon": 79.8166885,
+   "tags": {
+    "check_date": "2026-05-14",
+    "currency:INR": "yes",
+    "name": "Indbazaar",
+    "payment:cash": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "payment:google_pay": "yes",
+    "payment:upi": "yes",
+    "self_checkout": "no",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8356398761,
+   "lat": 11.9589723,
+   "lon": 79.8218428,
+   "tags": {
+    "addr:street": "2nd main road, Mahaveer Nagar, Lawspet",
+    "name": "Pushpa General Store",
+    "opening_hours": "PH,Mo-Su 08:00-22:00",
+    "shop": "general"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8818264130,
+   "lat": 11.9288777,
+   "lon": 79.8198058,
+   "tags": {
+    "addr:floor": "Lower Ground",
+    "addr:place": "Providence Mall",
+    "level": "-1",
+    "level:ref": "LG",
+    "name": "Smart Bazaar",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9222870093,
+   "lat": 12.0154748,
+   "lon": 79.8015775,
+   "tags": {
+    "name": "Auro Amirtham",
+    "opening_hours": "Mo-Sa 08:00-18:00",
+    "payment:cash": "yes",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10657321859,
+   "lat": 11.9218383,
+   "lon": 79.8327923,
+   "tags": {
+    "addr:street": "Angalamman place",
+    "name": "nayagam store",
+    "operator": "epicerie",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10682249073,
+   "lat": 11.9409693,
+   "lon": 79.7934064,
+   "tags": {
+    "addr:city": "Pondicherry",
+    "addr:housenumber": "306",
+    "addr:postcode": "605009",
+    "addr:street": "Vazhudavoor Road",
+    "name": "Daily Needs",
+    "opening_hours": "Mo-Su 09:00-22:00",
+    "payment:cash": "yes",
+    "payment:coins": "yes",
+    "payment:credit_cards": "yes",
+    "payment:debit_cards": "yes",
+    "phone": "9788599244",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12299025231,
+   "lat": 11.9381085,
+   "lon": 79.80058,
+   "tags": {
+    "addr:street": "1st Main Road, Aruthra Nagar, Puducherry",
+    "name": "Convenience Store",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12431295550,
+   "lat": 11.9755866,
+   "lon": 79.8414792,
+   "tags": {
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13658891985,
+   "lat": 12.0150431,
+   "lon": 79.8017889,
+   "tags": {
+    "name": "Hers",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13906079115,
+   "lat": 11.9553946,
+   "lon": 79.8233657,
+   "tags": {
+    "air_conditioning": "yes",
+    "level": "0",
+    "name": "Sri Sabthagiri Supermarket",
+    "name:ta": "\u0bb8\u0bcd\u0bb0\u0bc0 \u0b9a\u0baa\u0bcd\u0ba4\u0b95\u0bbf\u0bb0\u0bbf \u0b9a\u0bc2\u0baa\u0bcd\u0baa\u0bb0\u0bcd\u0bae\u0bbe\u0bb0\u0bcd\u0b95\u0bc6\u0b9f\u0bcd",
+    "opening_hours": "Mo-Su 09:00-22:30",
+    "payment:cash": "yes",
+    "payment:upi": "yes",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "node",
+   "id": 13959286881,
+   "lat": 11.9334298,
+   "lon": 79.8064935,
+   "tags": {
+    "addr:city": "Puducherry",
+    "addr:district": "Puducherry",
+    "addr:housenumber": "7",
+    "addr:postcode": "605005",
+    "addr:street": "Iyyanar Koil Street, Ellaipillaichavadi",
+    "level": "0",
+    "name": "Sri Vijayaganapathi Stores",
+    "operator": "GRM Jaithra",
+    "phone": "9940737547",
+    "shop": "supermarket",
+    "website": "https://svgs.co/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 141317360,
+   "center": {
+    "lat": 12.0015127,
+    "lon": 79.8106867
+   },
+   "tags": {
+    "building": "yes",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "way",
+   "id": 390572069,
+   "center": {
+    "lat": 11.9962991,
+    "lon": 79.808814
+   },
+   "tags": {
+    "building": "commercial",
+    "name": "Hemplanet",
+    "opening_hours": "Mo-Sa 10:00-4:20",
+    "phone": "08098021280",
+    "shop": "general",
+    "website": "https://www.hemplanet.in/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 544450744,
+   "center": {
+    "lat": 11.9392355,
+    "lon": 79.820116
+   },
+   "tags": {
+    "addr:postcode": "605013",
+    "air_conditioning": "no",
+    "building": "yes",
+    "changing_table": "no",
+    "check_date": "2026-04-28",
+    "currency:INR": "yes",
+    "internet_access": "no",
+    "name": "Annai General Store",
+    "name:ta": "\u0b85\u0ba3\u0bcd\u0ba3\u0bc8 \u0bae\u0bb3\u0bbf\u0b95\u0bc8 \u0b95\u0b9f\u0bc8",
+    "payment:cards": "no",
+    "payment:cash": "yes",
+    "payment:credit_cards": "no",
+    "payment:debit_cards": "no",
+    "payment:google_pay": "yes",
+    "shop": "convenience",
+    "toilets": "no",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 544451396,
+   "center": {
+    "lat": 11.9383928,
+    "lon": 79.821566
+   },
+   "tags": {
+    "building": "yes",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "way",
+   "id": 569628966,
+   "center": {
+    "lat": 11.9111948,
+    "lon": 79.8098801
+   },
+   "tags": {
+    "building": "yes",
+    "shop": "supermarket"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1192568584,
+   "center": {
+    "lat": 11.9562224,
+    "lon": 79.8385354
+   },
+   "tags": {
+    "building": "yes",
+    "name": "Sri Kamatchi Traders",
+    "shop": "general"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1192912804,
+   "center": {
+    "lat": 11.9104005,
+    "lon": 79.8078882
+   },
+   "tags": {
+    "building": "yes",
+    "name": "Thanigavel Arisi Vyabaram",
+    "shop": "general"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1490446360,
+   "center": {
+    "lat": 12.0104233,
+    "lon": 79.8113307
+   },
+   "tags": {
+    "building": "yes",
+    "name": "PTDC - Pour Tous Distribution Center",
+    "shop": "convenience"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1491691427,
+   "center": {
+    "lat": 11.9963389,
+    "lon": 79.8085715
+   },
+   "tags": {
+    "building": "yes",
+    "name": "MG EcoDuties Probiotics",
+    "shop": "general"
+   }
+  }
+ ]
+}

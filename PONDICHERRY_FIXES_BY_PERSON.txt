@@ -1,0 +1,387 @@
+================================================================
+DATASET FIXES - WORK SPLIT FOR 3 PEOPLE
+qaoa_dataset_pondicherry / generate_dataset_pondicherry.py
+================================================================
+
+Write your names here before sharing:
+
+   PERSON A (Demand side)     = ____________________
+   PERSON B (Store side)      = ____________________
+   PERSON C (Delivery + test) = ____________________
+   INTEGRATOR (merges all)    = ____________________
+
+
+----------------------------------------------------------------
+WHY WE SPLIT IT THIS WAY
+----------------------------------------------------------------
+All 13 fixes are in ONE script. If three people edit the same file
+at the same time, the work will be lost.
+
+So we split by SECTION of the script. Each person owns different
+sections. Nobody touches another person's section.
+
+   Person A owns  : Section 2 (zones), 3 (products), 4 (demand)
+   Person B owns  : Section 1 (candidate stores)
+   Person C owns  : Section 5 (travel time), 6 (site distance),
+                    plus the new checking code at the end
+
+One more important change for everyone:
+   Section 1 (stores) must MOVE to AFTER Section 4 (demand).
+   Reason: store capacity is now calculated from total demand, so
+   demand must exist first. The INTEGRATOR does this move.
+
+
+----------------------------------------------------------------
+AGREED NAMES - DO NOT CHANGE THESE, WE MERGE ON THEM
+----------------------------------------------------------------
+Everyone must use exactly these names, or the merge will fail.
+
+   ITEMS_PER_ORDER      = 5.0     (Person A defines)
+   HANDLING_MIN         = 3.0     (Person C defines)
+   SERVICE_PROMISE_MIN  = 15.0    (Person C defines)
+   CAPACITY_SLACK       = 2.2     (Person B defines)
+
+   total_volume     -> one number, made by A, used by B
+   zone_speed       -> dictionary zone_id -> km/h, made by A, used by C
+   sites_df         -> made by B, used by C
+   zones_df         -> made by A, used by B and C
+
+Put all four capital-letter settings at the TOP of the file, not
+inside the loops.
+
+
+================================================================
+PERSON A - DEMAND SIDE
+================================================================
+You own: Section 2 (demand zones), Section 3 (products),
+         Section 4 (zone x product demand)
+
+You do 6 fixes: 1, 5, 6, 8, 12, 13
+
+You need from others: nothing. YOU CAN START IMMEDIATELY.
+You must give to B: total_volume (one number, in litres)
+You must give to C: zone_speed (one speed per zone)
+
+----------------------------------------------------------------
+FIX 1 - DEMAND IS 10 TIMES TOO SMALL   (this is the big one)
+----------------------------------------------------------------
+Now: each order has only 0.1 to 0.25 items. Not possible.
+Cause: the "/ 10" in the mean_demand line in Section 4.
+Change:
+        ITEMS_PER_ORDER = 5.0
+        mean_units = zone_orders * ITEMS_PER_ORDER * sku_share
+Check: items per order must come out between 4 and 6.
+
+----------------------------------------------------------------
+FIX 5 - PRODUCT SHARES ADD TO 1.18, NOT 1.00
+----------------------------------------------------------------
+Cause: Dairy has 2 products (milk, eggs) but the full 0.18 Dairy
+       share is given to BOTH of them.
+Change: divide each category share by the number of products in
+        that category. Dairy becomes 0.09 for milk, 0.09 for eggs.
+Add this line so it can never break again:
+        assert abs(sum(sku_share.values()) - 1.0) < 1e-9
+
+----------------------------------------------------------------
+FIX 6 - unit_volume_liters IS NEVER USED
+----------------------------------------------------------------
+Now: chips (0.15 L) take the same space as water (1.0 L).
+Change: add a new column to zone_sku_demand.csv:
+        demand_volume_liters = units * unit_volume_liters
+Then:   total_volume = sum of that column   <-- GIVE THIS TO B
+
+----------------------------------------------------------------
+FIX 8 - POPULATION DENSITY DOES NOTHING
+----------------------------------------------------------------
+Now: correlation between density and orders is -0.105 (zero).
+Change: calculate orders FROM density in Section 2:
+        multiplier = commercial 1.30, mixed 1.00, residential 0.85
+        orders = density / 60 * multiplier * random(0.90, 1.10)
+Check: correlation must be above 0.8.
+
+----------------------------------------------------------------
+FIX 12 - demand_std_dev DOES NOT MATCH THE DEMAND
+----------------------------------------------------------------
+Now: demand uses Poisson, so std must be sqrt(mean). The file
+     uses 15-35% of the value instead. These disagree.
+Change: demand_std_dev = sqrt(mean_units)
+
+----------------------------------------------------------------
+FIX 13 - THE "+1" MAKES ALL DEMAND TOO HIGH
+----------------------------------------------------------------
+Now: poisson(mean) + 1 adds 1 to every value (20-30% extra).
+Change: units = max(1, poisson(mean_units))
+
+----------------------------------------------------------------
+ALSO (small job, 2 lines) - SPEED PER ZONE, FOR PERSON C
+----------------------------------------------------------------
+In Section 2, give each zone ONE road speed and save it:
+        base speed: commercial 18, residential 24, mixed 21
+        zone_speed[zone_id] = base * random(0.92, 1.08)
+Add avg_road_speed_kmph as a column in demand_zones.csv.
+Person C will use this. Do not let C draw speeds themselves.
+
+----------------------------------------------------------------
+PERSON A CHECKLIST
+----------------------------------------------------------------
+[ ] items per order is between 4 and 6
+[ ] product shares add to exactly 1.0 (assert passes)
+[ ] zone_sku_demand.csv has demand_volume_liters column
+[ ] density and orders correlation is above 0.8
+[ ] demand_std_dev equals sqrt(mean)
+[ ] no "+1" anywhere in the demand line
+[ ] demand_zones.csv has avg_road_speed_kmph column
+[ ] sent total_volume to Person B
+[ ] sent zone_speed to Person C
+
+
+================================================================
+PERSON B - STORE SIDE
+================================================================
+You own: Section 1 (candidate dark stores)
+
+You do 4 fixes: 2, 3b, 7, 11   (and add the new store, fix 4)
+
+You need from A: total_volume (one number).
+   YOU CAN START WITHOUT IT. Do fixes 3b, 7, 11 and the new store
+   first. Use a placeholder total_volume = 14000 for now and swap
+   in A's real number at the end.
+You must give to C: sites_df (with the new coordinates)
+
+----------------------------------------------------------------
+FIX 2 - STORES ARE 284 TIMES TOO BIG   (this is the big one)
+----------------------------------------------------------------
+Now: demand 559 units, capacity 158,673 units.
+Problem: every plan fits. So the answer is always "open the one
+         cheapest store". There is nothing left to optimise, and
+         our whole inventory-allocation part becomes pointless.
+Cause: max_sku_units = capacity_sqft * random(8, 12)
+       This has no connection to how much anyone actually orders.
+Change: delete that line. Calculate capacity from demand instead:
+        CAPACITY_SLACK = 2.2
+        total_sqft = sum of capacity_sqft over all sites
+        daily_capacity_liters[i] = round(
+            CAPACITY_SLACK * total_volume * sqft[i] / total_sqft / 25) * 25
+Check: capacity / demand must be about 2.2x, not 284x.
+       At least 4 stores should be needed to cover everything.
+
+----------------------------------------------------------------
+FIX 3b - STORES SIT EXACTLY ON TOP OF DEMAND ZONES
+----------------------------------------------------------------
+Now: 9 of 10 stores have the same coordinates as a zone, which
+     gives 0.00 minute delivery. Not possible.
+Change: move each store about 390 m away. A candidate site is a
+        PLOT near the area, not the centre of the area:
+        SITE_OFFSET_DEG = 0.0035
+        angle = 2 * pi * i / number_of_sites
+        site_lat = lat + SITE_OFFSET_DEG * cos(angle)
+        site_lon = lon + SITE_OFFSET_DEG * sin(angle)
+Also rename them: "White Town (plot)" etc.
+Note: Person C adds the 3-minute picking time. That is fix 3a,
+      not yours. Do not add time here.
+
+----------------------------------------------------------------
+FIX 4 - ZONE Z20 CANNOT BE REACHED
+----------------------------------------------------------------
+Z20 Auroville Fringe has no store within 15 minutes. Nearest is
+15.13 minutes. It misses by 8 seconds.
+Change: add one more candidate site to the list:
+        ("DS11", "Kuilapalayam", 11.9958, 79.8175)
+        (real village on the edge of Auroville)
+DO NOT fix this by changing the promise to 16 minutes. The
+15-minute promise is the main point of our project, and it is also
+what keeps the quantum problem small enough to run.
+
+----------------------------------------------------------------
+FIX 7 - RENT HAS NO RELATION TO STORE SIZE OR LOCATION
+----------------------------------------------------------------
+Now: 1,200 sqft costs Rs 76,434 but 2,000 sqft costs Rs 51,023.
+     White Town (the most expensive area) is cheap per sqft.
+     Correlation between rent and size is only 0.262.
+Problem: which store we open is decided by the random number
+         generator, not by geography. That is exactly what our
+         project is supposed to decide properly.
+Cause: rent, setup and size are three separate random numbers.
+Change:
+        RENT_PER_SQFT_BASE = 35.0
+        TOWN_CENTRE = (11.9330, 79.8340)    # White Town
+        d = haversine_km(site_lat, site_lon, TOWN_CENTRE)
+        premium = clip(1.35 - 0.05 * d, 0.80, 1.35)
+        rent  = sqft * RENT_PER_SQFT_BASE * premium * random(0.95, 1.05)
+        setup = sqft * random(280, 360)
+Check: correlation between rent and sqft must be above 0.8.
+
+----------------------------------------------------------------
+FIX 11 - RENT IS MONTHLY, SETUP IS ONE TIME, CANNOT ADD THEM
+----------------------------------------------------------------
+Our cost formula needs ONE number per store per day.
+Change: add a column:
+        daily_opening_cost_inr = rent / 30.4
+                               + setup / (36 * 30.4)
+        (36 months = 3 year plan. Write this in the README.)
+
+----------------------------------------------------------------
+PERSON B CHECKLIST
+----------------------------------------------------------------
+[ ] capacity / demand is about 2.2x (not 284x)
+[ ] at least 4 stores are needed to cover all demand
+[ ] no store has the same coordinates as any zone
+[ ] DS11 Kuilapalayam is added
+[ ] promise is still 15 minutes (NOT changed to 16)
+[ ] correlation between rent and sqft is above 0.8
+[ ] daily_opening_cost_inr column exists
+[ ] used A's real total_volume, not the placeholder
+
+
+================================================================
+PERSON C - DELIVERY TIME AND TESTING
+================================================================
+You own: Section 5 (travel time), Section 6 (site distances),
+         and the NEW checking code at the end of the script
+
+You do 3 fixes: 3a, 9, 10
+You also write all the tests, and cut the small version for QAOA.
+
+You need from A: zone_speed
+You need from B: sites_df with new coordinates
+   YOU CAN START NOW by writing the checking code and the small
+   version. Those do not need A or B to finish.
+
+----------------------------------------------------------------
+FIX 3a - ADD PICKING TIME
+----------------------------------------------------------------
+Now: delivery time is pure travel. No picking or packing time.
+     Nine pairs show 0.00 minutes.
+Change:
+        HANDLING_MIN = 3.0
+        delivery_time_min = HANDLING_MIN + (road_km / speed) * 60
+Also rename the column from travel_time_min to delivery_time_min,
+because it now includes shop time, not just driving.
+
+----------------------------------------------------------------
+FIX 9 - SPEED IS RANDOM FOR EVERY PAIR
+----------------------------------------------------------------
+Now: the speed line is INSIDE the double loop, so a new random
+     speed is drawn for all 200 pairs. Result: the same zone shows
+     speeds from 16.5 to 19.7 km/h.
+Problem: delivery time no longer depends properly on distance.
+         Two places the same distance away get different times.
+Change: delete the random speed from your loop. Use Person A's
+        zone_speed dictionary instead:
+        speed = zone_speed[zone_id]
+Check: within one zone, the implied speed must be the same.
+
+----------------------------------------------------------------
+FIX 10 - NO DELIVERY PROMISE IN THE DATA
+----------------------------------------------------------------
+The 15-minute promise is the main constraint of our project but it
+is nowhere in the files.
+Change:
+        SERVICE_PROMISE_MIN = 15.0
+        within_sla = (delivery_time_min <= SERVICE_PROMISE_MIN)
+Add within_sla as a true/false column in travel_time_matrix.csv.
+
+----------------------------------------------------------------
+YOUR SECOND JOB - THE CHECKING CODE (very important)
+----------------------------------------------------------------
+Add this at the end of the script so a broken dataset can never be
+handed over again:
+
+        assert items_per_order between 4 and 6
+        assert capacity / demand between 2.0 and 3.0
+        assert no delivery_time_min == 0
+        assert sum of product shares == 1.0
+        assert every zone has at least 1 site with within_sla True
+        print correlation(rent, sqft)
+        print correlation(density, orders)
+
+If any assert fails, the script must stop. Do not let it write bad
+CSV files.
+
+----------------------------------------------------------------
+YOUR THIRD JOB - THE SMALL VERSION FOR QAOA
+----------------------------------------------------------------
+The full dataset is 11 sites x 20 zones. That needs 87 qubits.
+Our laptop can only simulate about 21. So the full version is for
+normal computer methods only.
+
+Make a second, smaller set of files in a sub-folder:
+        Sites: DS01, DS02, DS07, DS08
+        Zones: Z01, Z03, Z05, Z07, Z16
+        -> about 19 qubits
+
+VERY IMPORTANT: calculate the small version's capacity from the
+SMALL version's own demand. If you just copy the big capacity
+numbers, fix 2 breaks again and the small problem becomes
+pointless too.
+
+----------------------------------------------------------------
+PERSON C CHECKLIST
+----------------------------------------------------------------
+[ ] no delivery time is 0 (fastest is about 4 minutes)
+[ ] column renamed to delivery_time_min
+[ ] speed comes from A's zone_speed, not from your own random
+[ ] implied speed is the same inside one zone
+[ ] within_sla column exists in travel_time_matrix.csv
+[ ] every zone has at least one site inside 15 minutes
+[ ] all asserts are written and the script stops if one fails
+[ ] small version exists (4 sites x 5 zones, about 19 qubits)
+[ ] small version capacity is from its own demand
+
+
+================================================================
+INTEGRATOR - MERGING THE WORK
+================================================================
+Do this AFTER all three finish.
+
+STEP 1  Move Section 1 (stores) to come AFTER Section 4 (demand).
+        Capacity now needs total_volume, so demand must exist first.
+        New order of the script:
+            zones -> products -> demand -> STORES -> travel -> checks
+
+STEP 2  Move all settings to the top of the file:
+        ITEMS_PER_ORDER, HANDLING_MIN, SERVICE_PROMISE_MIN,
+        CAPACITY_SLACK, RENT_PER_SQFT_BASE, CIRCUITY_FACTOR
+
+STEP 3  Run the script. All asserts must pass.
+
+STEP 4  Run it a second time. The CSV files must be exactly the
+        same both times. If not, someone used random numbers
+        without a seed.
+
+STEP 5  Update the README: say the 12 fixes were made, and write
+        down the 3-year amortisation and the 15-minute promise.
+
+
+================================================================
+ORDER OF WORK - NOBODY HAS TO WAIT
+================================================================
+DAY 1 (all three work at the same time)
+     A: fixes 1, 5, 6, 8, 12, 13 and zone speeds
+     B: fixes 3b, 7, 11 and add DS11 (use placeholder demand)
+     C: write all the checking code and the small-version code
+
+DAY 2 (handover)
+     A gives total_volume to B  -> B finishes fix 2
+     A gives zone_speed to C    -> C finishes fixes 3a, 9, 10
+     B gives sites_df to C      -> C runs the travel matrix
+
+DAY 3
+     INTEGRATOR merges, reorders, runs, checks reproducibility
+
+
+================================================================
+IF THERE ARE ONLY 2 PEOPLE
+================================================================
+     Person 1 = A          (6 fixes, the demand side)
+     Person 2 = B + C      (7 fixes, stores and delivery)
+     Person 2 also integrates.
+
+IF THERE IS ONLY 1 PERSON: do A, then B, then C, in that order.
+
+
+================================================================
+Full details with code: PONDICHERRY_DATASET_FIXES.txt
+Short summary:          PONDICHERRY_FIXES_SHORT.txt
+Working example script: generate_pondicherry_v2.py
+================================================================
