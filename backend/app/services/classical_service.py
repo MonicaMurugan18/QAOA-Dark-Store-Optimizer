@@ -24,10 +24,12 @@ the comparison would not be fair.
 ON OPTIMALITY
 =============
 CBC is an exact branch-and-bound MILP solver. When it reports status "Optimal"
-it has PROVEN optimality for this model, and `proven_optimal` is set to True.
-If it hits the time limit it returns the best solution found so far and
-`proven_optimal` is False -- in that case the value is a bound, not the optimum,
-and nothing downstream may treat it as a reference.
+and the solution status is "Optimal Solution Found", it has PROVEN optimality
+for this model, and `proven_optimal` is set to True. If it hits the time limit
+it returns the best solution found so far and `proven_optimal` is False -- in
+that case the value is a bound, not the optimum, and nothing downstream may
+treat it as a reference. Note that PuLP reports status "Optimal" in BOTH cases;
+only `prob.sol_status` tells them apart.
 """
 
 from __future__ import annotations
@@ -111,7 +113,15 @@ def solve_classical(
     runtime = time.perf_counter() - started
 
     status = pulp.LpStatus[status_code]
-    proven_optimal = status == "Optimal"
+    # PuLP's status alone is not enough. When CBC stops at its time limit with an
+    # integer solution in hand, PuLP still reports status "Optimal"; only
+    # sol_status distinguishes a proven optimum (LpSolutionOptimal) from a
+    # merely feasible incumbent (LpSolutionIntegerFeasible).
+    solution_status = pulp.LpSolution.get(prob.sol_status, str(prob.sol_status))
+    proven_optimal = (
+        status_code == pulp.LpStatusOptimal
+        and prob.sol_status == pulp.LpSolutionOptimal
+    )
 
     # ------------------------------------------------------------ decode
     selected: list[int] = []
@@ -133,6 +143,7 @@ def solve_classical(
     details = {
         "solver": "PuLP + CBC (branch and bound)",
         "pulp_status": status,
+        "solution_status": solution_status,
         "proven_optimal": proven_optimal,
         "n_variables": len(x) + len(y),
         "n_constraints": len(prob.constraints),
@@ -150,7 +161,8 @@ def solve_classical(
     }
     if not proven_optimal:
         details["notes"].append(
-            f"status is {status!r}, so this value is the best found within the "
+            f"status is {status!r} with solution status {solution_status!r}, so "
+            f"optimality was not proven: this value is the best found within the "
             f"time limit and must not be used as an optimality reference."
         )
 

@@ -55,9 +55,35 @@ def test_brute_force_matches_known_optimum(instance):
 def test_classical_finds_proven_optimum(instance):
     metrics, details = solve_classical(instance, time_limit_sec=30)
     assert details["pulp_status"] == "Optimal"
+    assert details["solution_status"] == "Optimal Solution Found"
     assert details["proven_optimal"] is True
     assert metrics.feasible, metrics.violations
     assert abs(metrics.objective_value - KNOWN_OPTIMUM) < TOL
+
+
+def test_classical_time_limit_is_not_proven_optimal(instance, monkeypatch):
+    """CBC stopping at its time limit must not be reported as a proven optimum.
+
+    On a time-limited stop with an incumbent, PuLP returns status "Optimal" but
+    sets sol_status to LpSolutionIntegerFeasible. The dev instance solves too
+    fast to hit a real limit, so the solve is wrapped to report exactly that.
+    """
+    import pulp
+
+    real_solve = pulp.LpProblem.solve
+
+    def time_limited_solve(self, *args, **kwargs):
+        status = real_solve(self, *args, **kwargs)
+        self.sol_status = pulp.LpSolutionIntegerFeasible
+        return status
+
+    monkeypatch.setattr(pulp.LpProblem, "solve", time_limited_solve)
+    metrics, details = solve_classical(instance, time_limit_sec=30)
+    assert details["pulp_status"] == "Optimal"
+    assert details["solution_status"] == "Solution Found"
+    assert details["proven_optimal"] is False
+    assert any("not proven" in n for n in details["notes"])
+    assert metrics.feasible, metrics.violations
 
 
 def test_classical_respects_budget(instance):
