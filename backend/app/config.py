@@ -7,14 +7,26 @@ environment; see .env.example.
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# backend/app/config.py -> backend/.env
+#
+# This is resolved absolutely and deliberately. pydantic-settings treats a
+# bare "env_file" name as relative to the PROCESS WORKING DIRECTORY, so
+# launching uvicorn from the repository root instead of from backend/ used to
+# load no .env at all: DATABASE_URL then silently fell back to the SQLite
+# default and the failure surfaced later as a confusing startup error rather
+# than "your config was not found". Anchoring to this file's own location
+# makes the backend behave identically from any working directory.
+ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env", env_file_encoding="utf-8", extra="ignore"
+        env_file=ENV_FILE, env_file_encoding="utf-8", extra="ignore"
     )
 
     # ---------------------------------------------------------------- app
