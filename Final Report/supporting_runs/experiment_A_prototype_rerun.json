@@ -1,0 +1,438 @@
+{
+ "ids": {
+  "store_ids": [
+   1,
+   4,
+   5
+  ],
+  "product_ids": [
+   1,
+   2,
+   3
+  ],
+  "areas": [
+   "Lawspet",
+   "Marie Oulgaret",
+   "Venkata Nagar"
+  ]
+ },
+ "instance": {
+  "stores": [
+   [
+    1,
+    "Venkata Nagar Hub 1",
+    7800.0,
+    3800.0
+   ],
+   [
+    4,
+    "Lawspet Hub",
+    9200.0,
+    4200.0
+   ],
+   [
+    5,
+    "Marie Oulgaret Hub",
+    8100.0,
+    3600.0
+   ]
+  ],
+  "areas": [
+   [
+    "Lawspet",
+    2275.0,
+    109550.0,
+    2625.0,
+    19719.0,
+    525
+   ],
+   [
+    "Marie Oulgaret",
+    1687.5,
+    80650.0,
+    1925.0,
+    14517.0,
+    385
+   ],
+   [
+    "Venkata Nagar",
+    1950.0,
+    93900.0,
+    2250.0,
+    16902.0,
+    450
+   ]
+  ],
+  "n_links": 7,
+  "links": {
+   "1|Lawspet": 11.012,
+   "1|Marie Oulgaret": 9.218,
+   "1|Venkata Nagar": 3.0,
+   "4|Lawspet": 3.0,
+   "4|Venkata Nagar": 11.012,
+   "5|Marie Oulgaret": 3.0,
+   "5|Venkata Nagar": 9.218
+  },
+  "delivery_cost": {
+   "1|Lawspet": 17343.71,
+   "1|Marie Oulgaret": 10646.86,
+   "1|Venkata Nagar": 4050.0,
+   "4|Lawspet": 4725.0,
+   "4|Venkata Nagar": 14866.04,
+   "5|Marie Oulgaret": 3465.0,
+   "5|Venkata Nagar": 12444.38
+  },
+  "warnings": [
+   "area 'Lawspet' has no demand-zone row; located at the centroid of the stores in that area (approximation)",
+   "area 'Marie Oulgaret' has no demand-zone row; located at the centroid of the stores in that area (approximation)",
+   "area 'Venkata Nagar' has no demand-zone row; located at the centroid of the stores in that area (approximation)",
+   "all 9 store-area legs use a straight-line ESTIMATE; no routed travel times were found for this instance"
+  ]
+ },
+ "classical": {
+  "metrics": {
+   "objective_value": 14716.1402,
+   "revenue_captured": 51138.0,
+   "opening_cost": 17000.0,
+   "delivery_cost": 19421.8598,
+   "demand_units_total": 6800.0,
+   "demand_units_served": 6800.0,
+   "service_level": 1.0,
+   "budget_used": 17000.0,
+   "storage_used": 5912.5,
+   "storage_available": 8000.0,
+   "storage_utilization": 0.7391,
+   "feasible": true
+  },
+  "details": {
+   "solver": "PuLP + CBC (branch and bound)",
+   "pulp_status": "Optimal",
+   "proven_optimal": true,
+   "n_variables": 10,
+   "n_constraints": 14,
+   "time_limit_sec": 120,
+   "pulp_objective_value": 14716.140191645336,
+   "integerised_constraints": true,
+   "notes": [
+    "CBC is an exact MILP solver; status 'Optimal' means optimality was proven FOR THIS MODEL, not for any reformulation of it."
+   ],
+   "runtime": 0.05794760002754629
+  },
+  "assign": null
+ },
+ "qubo_compact": {
+  "encoding": "compact",
+  "n_qubits": 11,
+  "n_decision_variables": 10,
+  "n_auxiliary_variables": 1,
+  "search_space_size": "2^11",
+  "penalty_weight": 92526.4151,
+  "qubo_offset": 0.0,
+  "constraints_in_reference_model": 14,
+  "notes": [
+   "Inequalities are encoded as penalties on their minimal violating subsets, so no slack variables are needed.",
+   "1 auxiliary qubits were added by AND gadgets to reduce degree-3-or-higher penalty terms to degree 2.",
+   "A constraint that no reachable solution can violate contributes no terms at all.",
+   "The delivery/service constraint is enforced structurally by omitting infeasible store-area links, so it consumes no qubits.",
+   "objective_value is reported in the original MAXIMISATION sense; the QUBO itself minimises the negation."
+  ]
+ },
+ "qubo_slack": {
+  "encoding": "slack",
+  "n_qubits": 62,
+  "n_decision_variables": 10,
+  "n_auxiliary_variables": 52,
+  "search_space_size": "2^62",
+  "penalty_weight": 92526.4151,
+  "qubo_offset": 37010566026790.32,
+  "constraints_in_reference_model": 14,
+  "notes": [
+   "52 integer slack qubits were added to convert inequality constraints into equalities. Slack cost dominates the register.",
+   "Slack variables carry no business meaning and are ignored when decoding a solution.",
+   "The delivery/service constraint is enforced structurally by omitting infeasible store-area links, so it consumes no qubits.",
+   "objective_value is reported in the original MAXIMISATION sense; the QUBO itself minimises the negation."
+  ]
+ },
+ "bruteforce": {
+  "qubo_minimum": -14716.140191645332,
+  "objective_value_maximisation": 14716.140191645332,
+  "bitstring_variable_order": "11001110001",
+  "states_enumerated": 2048
+ },
+ "qaoa": [
+  {
+   "reps": 1,
+   "maxiter": 5,
+   "shots": 256,
+   "metrics": {
+    "objective_value": 10846.0,
+    "revenue_captured": 36621.0,
+    "opening_cost": 17000.0,
+    "delivery_cost": 8775.0,
+    "demand_units_total": 6800.0,
+    "demand_units_served": 4875.0,
+    "service_level": 0.7169,
+    "budget_used": 17000.0,
+    "storage_used": 4225.0,
+    "storage_available": 8000.0,
+    "storage_utilization": 0.5281,
+    "feasible": true
+   },
+   "details": {
+    "solver": "QAOA (Qiskit QAOAAnsatz + StatevectorSampler, local simulator)",
+    "implementation": "explicit loop over Qiskit primitives",
+    "encoding": "compact",
+    "n_qubits": 11,
+    "n_decision_variables": 10,
+    "n_auxiliary_variables": 1,
+    "reps_p": 1,
+    "maxiter": 5,
+    "shots_per_iteration": 256,
+    "final_shots": 1024,
+    "seed": 42,
+    "penalty_weight": 92526.4151,
+    "hamiltonian_scale_divisor": 91508.4326,
+    "ising_offset": 449363.5673,
+    "circuit_depth": 31,
+    "circuit_operations": 105,
+    "optimizer": "scipy COBYLA",
+    "optimizer_success": false,
+    "optimizer_message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+    "circuit_evaluations": 5,
+    "best_expectation_rupees_minimisation": 207640.4418,
+    "final_angles": [
+     2.114657,
+     0.991945
+    ],
+    "distinct_bitstrings_sampled": 422,
+    "feasible_shot_fraction": 0.253906,
+    "probability_of_returned_solution": 0.001953,
+    "returned_feasible_sample": true,
+    "qubo_value_of_returned_solution": -10846.0,
+    "returned_bitstring": "10001100011",
+    "stage_times_sec": {
+     "build_qubo": 0.0063,
+     "to_ising_and_normalise": 0.0266,
+     "build_circuit": 0.1223,
+     "angle_optimisation": 0.4341,
+     "final_measurement": 0.0707,
+     "decode_and_validate": 0.1187
+    },
+    "runtime": 0.7811134000075981,
+    "notes": [
+     "QAOA samples a biased probability distribution. It does not enumerate the search space and gives no optimality guarantee.",
+     "The cost operator was divided by its largest coefficient before building the circuit. That is a monotone rescaling, so it leaves the ordering of all solutions and the location of the optimum unchanged; all reported values use the original unscaled QUBO.",
+     "Constraints are penalties inside the QUBO, so an infeasible sample is an expected outcome rather than a bug.",
+     "qiskit_algorithms.QAOA is deliberately not used: it was measured to scale pathologically on this version combination (>200s at 11 qubits versus 0.064s per sampler call)."
+    ]
+   }
+  },
+  {
+   "reps": 1,
+   "maxiter": 30,
+   "shots": 512,
+   "metrics": {
+    "objective_value": 10846.0,
+    "revenue_captured": 36621.0,
+    "opening_cost": 17000.0,
+    "delivery_cost": 8775.0,
+    "demand_units_total": 6800.0,
+    "demand_units_served": 4875.0,
+    "service_level": 0.7169,
+    "budget_used": 17000.0,
+    "storage_used": 4225.0,
+    "storage_available": 8000.0,
+    "storage_utilization": 0.5281,
+    "feasible": true
+   },
+   "details": {
+    "solver": "QAOA (Qiskit QAOAAnsatz + StatevectorSampler, local simulator)",
+    "implementation": "explicit loop over Qiskit primitives",
+    "encoding": "compact",
+    "n_qubits": 11,
+    "n_decision_variables": 10,
+    "n_auxiliary_variables": 1,
+    "reps_p": 1,
+    "maxiter": 30,
+    "shots_per_iteration": 512,
+    "final_shots": 2048,
+    "seed": 42,
+    "penalty_weight": 92526.4151,
+    "hamiltonian_scale_divisor": 91508.4326,
+    "ising_offset": 449363.5673,
+    "circuit_depth": 31,
+    "circuit_operations": 105,
+    "optimizer": "scipy COBYLA",
+    "optimizer_success": true,
+    "optimizer_message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+    "circuit_evaluations": 25,
+    "best_expectation_rupees_minimisation": 192275.6616,
+    "final_angles": [
+     2.156037,
+     0.961445
+    ],
+    "distinct_bitstrings_sampled": 576,
+    "feasible_shot_fraction": 0.274414,
+    "probability_of_returned_solution": 0.001465,
+    "returned_feasible_sample": true,
+    "qubo_value_of_returned_solution": -10846.0,
+    "returned_bitstring": "10001100011",
+    "stage_times_sec": {
+     "build_qubo": 0.0059,
+     "to_ising_and_normalise": 0.027,
+     "build_circuit": 0.0354,
+     "angle_optimisation": 1.6922,
+     "final_measurement": 0.0823,
+     "decode_and_validate": 0.1674
+    },
+    "runtime": 2.0127418000483885,
+    "notes": [
+     "QAOA samples a biased probability distribution. It does not enumerate the search space and gives no optimality guarantee.",
+     "The cost operator was divided by its largest coefficient before building the circuit. That is a monotone rescaling, so it leaves the ordering of all solutions and the location of the optimum unchanged; all reported values use the original unscaled QUBO.",
+     "Constraints are penalties inside the QUBO, so an infeasible sample is an expected outcome rather than a bug.",
+     "qiskit_algorithms.QAOA is deliberately not used: it was measured to scale pathologically on this version combination (>200s at 11 qubits versus 0.064s per sampler call)."
+    ]
+   }
+  },
+  {
+   "reps": 2,
+   "maxiter": 60,
+   "shots": 1024,
+   "metrics": {
+    "objective_value": 10846.0,
+    "revenue_captured": 36621.0,
+    "opening_cost": 17000.0,
+    "delivery_cost": 8775.0,
+    "demand_units_total": 6800.0,
+    "demand_units_served": 4875.0,
+    "service_level": 0.7169,
+    "budget_used": 17000.0,
+    "storage_used": 4225.0,
+    "storage_available": 8000.0,
+    "storage_utilization": 0.5281,
+    "feasible": true
+   },
+   "details": {
+    "solver": "QAOA (Qiskit QAOAAnsatz + StatevectorSampler, local simulator)",
+    "implementation": "explicit loop over Qiskit primitives",
+    "encoding": "compact",
+    "n_qubits": 11,
+    "n_decision_variables": 10,
+    "n_auxiliary_variables": 1,
+    "reps_p": 2,
+    "maxiter": 60,
+    "shots_per_iteration": 1024,
+    "final_shots": 4096,
+    "seed": 42,
+    "penalty_weight": 92526.4151,
+    "hamiltonian_scale_divisor": 91508.4326,
+    "ising_offset": 449363.5673,
+    "circuit_depth": 51,
+    "circuit_operations": 187,
+    "optimizer": "scipy COBYLA",
+    "optimizer_success": true,
+    "optimizer_message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+    "circuit_evaluations": 47,
+    "best_expectation_rupees_minimisation": 123145.5019,
+    "final_angles": [
+     3.169083,
+     0.701464,
+     3.292817,
+     2.757094
+    ],
+    "distinct_bitstrings_sampled": 460,
+    "feasible_shot_fraction": 0.249268,
+    "probability_of_returned_solution": 0.000244,
+    "returned_feasible_sample": true,
+    "qubo_value_of_returned_solution": 81680.415067,
+    "returned_bitstring": "00001100011",
+    "stage_times_sec": {
+     "build_qubo": 0.0072,
+     "to_ising_and_normalise": 0.0316,
+     "build_circuit": 0.0469,
+     "angle_optimisation": 4.7069,
+     "final_measurement": 0.1482,
+     "decode_and_validate": 0.1492
+    },
+    "runtime": 5.093430699896999,
+    "notes": [
+     "QAOA samples a biased probability distribution. It does not enumerate the search space and gives no optimality guarantee.",
+     "The cost operator was divided by its largest coefficient before building the circuit. That is a monotone rescaling, so it leaves the ordering of all solutions and the location of the optimum unchanged; all reported values use the original unscaled QUBO.",
+     "Constraints are penalties inside the QUBO, so an infeasible sample is an expected outcome rather than a bug.",
+     "qiskit_algorithms.QAOA is deliberately not used: it was measured to scale pathologically on this version combination (>200s at 11 qubits versus 0.064s per sampler call)."
+    ]
+   }
+  },
+  {
+   "reps": 3,
+   "maxiter": 150,
+   "shots": 2048,
+   "metrics": {
+    "objective_value": 14716.1402,
+    "revenue_captured": 51138.0,
+    "opening_cost": 17000.0,
+    "delivery_cost": 19421.8598,
+    "demand_units_total": 6800.0,
+    "demand_units_served": 6800.0,
+    "service_level": 1.0,
+    "budget_used": 17000.0,
+    "storage_used": 5912.5,
+    "storage_available": 8000.0,
+    "storage_utilization": 0.7391,
+    "feasible": true
+   },
+   "details": {
+    "solver": "QAOA (Qiskit QAOAAnsatz + StatevectorSampler, local simulator)",
+    "implementation": "explicit loop over Qiskit primitives",
+    "encoding": "compact",
+    "n_qubits": 11,
+    "n_decision_variables": 10,
+    "n_auxiliary_variables": 1,
+    "reps_p": 3,
+    "maxiter": 150,
+    "shots_per_iteration": 2048,
+    "final_shots": 8192,
+    "seed": 42,
+    "penalty_weight": 92526.4151,
+    "hamiltonian_scale_divisor": 91508.4326,
+    "ising_offset": 449363.5673,
+    "circuit_depth": 71,
+    "circuit_operations": 269,
+    "optimizer": "scipy COBYLA",
+    "optimizer_success": true,
+    "optimizer_message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+    "circuit_evaluations": 48,
+    "best_expectation_rupees_minimisation": 369992.6825,
+    "final_angles": [
+     2.930001,
+     1.875396,
+     2.700053,
+     2.18864,
+     0.284397,
+     3.060252
+    ],
+    "distinct_bitstrings_sampled": 1293,
+    "feasible_shot_fraction": 0.041748,
+    "probability_of_returned_solution": 0.001831,
+    "returned_feasible_sample": true,
+    "qubo_value_of_returned_solution": -14716.140192,
+    "returned_bitstring": "10001110011",
+    "stage_times_sec": {
+     "build_qubo": 0.0069,
+     "to_ising_and_normalise": 0.0251,
+     "build_circuit": 0.0551,
+     "angle_optimisation": 6.6375,
+     "final_measurement": 0.2014,
+     "decode_and_validate": 0.3756
+    },
+    "runtime": 7.307444900041446,
+    "notes": [
+     "QAOA samples a biased probability distribution. It does not enumerate the search space and gives no optimality guarantee.",
+     "The cost operator was divided by its largest coefficient before building the circuit. That is a monotone rescaling, so it leaves the ordering of all solutions and the location of the optimum unchanged; all reported values use the original unscaled QUBO.",
+     "Constraints are penalties inside the QUBO, so an infeasible sample is an expected outcome rather than a bug.",
+     "qiskit_algorithms.QAOA is deliberately not used: it was measured to scale pathologically on this version combination (>200s at 11 qubits versus 0.064s per sampler call)."
+    ]
+   }
+  }
+ ]
+}

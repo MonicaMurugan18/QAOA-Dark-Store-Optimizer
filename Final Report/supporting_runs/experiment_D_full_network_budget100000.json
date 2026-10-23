@@ -1,0 +1,784 @@
+{
+ "instance": {
+  "stores": [
+   [
+    1,
+    "PTDC - Pour Tous Distribution Center",
+    6600.0,
+    2800.0
+   ],
+   [
+    2,
+    "Pour Tous",
+    9200.0,
+    4200.0
+   ],
+   [
+    3,
+    "Rathna Departmental Store",
+    9200.0,
+    4200.0
+   ],
+   [
+    4,
+    "Green City",
+    9200.0,
+    4200.0
+   ],
+   [
+    5,
+    "Nilgiri's",
+    9200.0,
+    4200.0
+   ],
+   [
+    6,
+    "Soci\u00e9t\u00e9 d'honn\u00eatet\u00e9",
+    6600.0,
+    2800.0
+   ],
+   [
+    7,
+    "Porte de l'\u00e9glise",
+    6600.0,
+    2800.0
+   ],
+   [
+    8,
+    "Grinde",
+    9200.0,
+    4200.0
+   ],
+   [
+    9,
+    "Magasins de S. B.",
+    6600.0,
+    2800.0
+   ],
+   [
+    10,
+    "Sri Vijaya Ganapathy Stores",
+    9200.0,
+    4200.0
+   ],
+   [
+    11,
+    "Uzhavar Santhai (Lawspet)",
+    9200.0,
+    4200.0
+   ],
+   [
+    12,
+    "Les Epicerie et Magasin de Prami",
+    6600.0,
+    2800.0
+   ],
+   [
+    13,
+    "Grocery Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    14,
+    "Sri Vijayaganapathy stores",
+    9200.0,
+    4200.0
+   ],
+   [
+    15,
+    "Foodland supermarket",
+    9200.0,
+    4200.0
+   ],
+   [
+    16,
+    "P. Siva Kumar Stores",
+    6600.0,
+    2800.0
+   ],
+   [
+    17,
+    "Vegetable Vendor",
+    9200.0,
+    4200.0
+   ],
+   [
+    18,
+    "Darshini Provisional Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    19,
+    "Sri Venkateshwara Super Market",
+    9200.0,
+    4200.0
+   ],
+   [
+    20,
+    "Aruna Cost Price Shop",
+    9200.0,
+    4200.0
+   ],
+   [
+    21,
+    "Al Jannat Stationary",
+    6600.0,
+    2800.0
+   ],
+   [
+    22,
+    "Convenience store",
+    6600.0,
+    2800.0
+   ],
+   [
+    23,
+    "Amudhasurabhi",
+    9200.0,
+    4200.0
+   ],
+   [
+    24,
+    "Patanjali Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    25,
+    "Arunachalam Stores",
+    9200.0,
+    4200.0
+   ],
+   [
+    26,
+    "Achaya Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    27,
+    "Sree venkateswara store",
+    6600.0,
+    2800.0
+   ],
+   [
+    28,
+    "Home Needs",
+    9200.0,
+    4200.0
+   ],
+   [
+    29,
+    "Thillai Supermarket",
+    9200.0,
+    4200.0
+   ],
+   [
+    30,
+    "Chitra",
+    6600.0,
+    2800.0
+   ],
+   [
+    31,
+    "Thanalakshi super market",
+    9200.0,
+    4200.0
+   ],
+   [
+    32,
+    "Subam maligai",
+    6600.0,
+    2800.0
+   ],
+   [
+    33,
+    "Indbazaar",
+    9200.0,
+    4200.0
+   ],
+   [
+    34,
+    "Pushpa General Store",
+    7800.0,
+    3600.0
+   ],
+   [
+    35,
+    "Smart Bazaar",
+    9200.0,
+    4200.0
+   ],
+   [
+    36,
+    "Auro Amirtham",
+    9200.0,
+    4200.0
+   ],
+   [
+    37,
+    "nayagam store",
+    9200.0,
+    4200.0
+   ],
+   [
+    38,
+    "Daily Needs",
+    9200.0,
+    4200.0
+   ],
+   [
+    39,
+    "Convenience Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    40,
+    "Hers",
+    9200.0,
+    4200.0
+   ],
+   [
+    41,
+    "Sri Sabthagiri Supermarket",
+    9200.0,
+    4200.0
+   ],
+   [
+    42,
+    "Sri Vijayaganapathi Stores",
+    9200.0,
+    4200.0
+   ],
+   [
+    43,
+    "Hemplanet",
+    7800.0,
+    3600.0
+   ],
+   [
+    44,
+    "Annai General Store",
+    6600.0,
+    2800.0
+   ],
+   [
+    45,
+    "Sri Kamatchi Traders",
+    7800.0,
+    3600.0
+   ],
+   [
+    46,
+    "Thanigavel Arisi Vyabaram",
+    7800.0,
+    3600.0
+   ],
+   [
+    47,
+    "PTDC - Pour Tous Distribution Center",
+    6600.0,
+    2800.0
+   ],
+   [
+    48,
+    "MG EcoDuties Probiotics",
+    7800.0,
+    3600.0
+   ]
+  ],
+  "areas": [
+   [
+    "Alankuppam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Annainagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Ariyankuppam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Auroville",
+    183.96,
+    194602.22,
+    345.26,
+    35028.4,
+    70
+   ],
+   [
+    "Bommayapalayam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Brindavanam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Chinna Mudaliar Chavadi",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Dhanvantari Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Edayanchavadi",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Ganapathichettikulam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Gorimedu",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Grand Bazaar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Harbour",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Irumbai",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kalapet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Karuvadikuppam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kathirkamam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kaveri Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kilputhupattu",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Korkadu",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kotamedu",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kottakarai",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kottakuppam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Krishna Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Kuilapalayam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Lawspet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Mettupalayam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Moolakulam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Morattandi",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Mudaliarpet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Muthialpet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Odiansalai",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Ozhukarai",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Pattanur",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Periya Mudaliar Chavadi",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Rainbow Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Rayapettai",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Reddiarpalayam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Sanjeevi Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Sedarapet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Solai Nagar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Thilaspet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Tiruchitrambalam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Uruvaiyar",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Veerampattinam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Villianur",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ]
+  ],
+  "n_links": 1056,
+  "links": {
+   "1|Alankuppam": 12.075,
+   "1|Annainagar": 13.95,
+   "1|Auroville": 10.105,
+   "1|Bommayapalayam": 14.173,
+   "1|Edayanchavadi": 8.518,
+   "1|Irumbai": 12.788,
+   "1|Kottakarai": 10.415,
+   "1|Kuilapalayam": 9.948,
+   "1|Morattandi": 14.73,
+   "1|Periya Mudaliar Chavadi": 14.152,
+   "1|Rayapettai": 12.138,
+   "1|Sanjeevi Nagar": 13.232,
+   "1|Tiruchitrambalam": 14.373,
+   "2|Bommayapalayam": 8.292,
+   "2|Chinna Mudaliar Chavadi": 7.733,
+   "2|Edayanchavadi": 11.137,
+   "2|Kalapet": 14.37,
+   "2|Karuvadikuppam": 11.813,
+   "2|Kotamedu": 8.385,
+   "2|Kottakarai": 14.098,
+   "2|Kottakuppam": 9.08,
+   "2|Krishna Nagar": 14.09,
+   "2|Kuilapalayam": 4.488,
+   "2|Muthialpet": 12.883,
+   "2|Periya Mudaliar Chavadi": 6.857,
+   "2|Solai Nagar": 12.543,
+   "3|Brindavanam": 7.348,
+   "3|Dhanvantari Nagar": 12.81,
+   "3|Gorimedu": 13.763,
+   "3|Grand Bazaar": 3.618,
+   "3|Harbour": 11.272,
+   "3|Karuvadikuppam": 9.67,
+   "3|Kathirkamam": 12.975,
+   "3|Kaveri Nagar": 11.807,
+   "3|Kotamedu": 11.818,
+   "3|Kottakuppam": 10.945,
+   "3|Krishna Nagar": 7.727,
+   "3|Lawspet": 11.433,
+   "3|Mettupalayam": 13.955,
+   "3|Moolakulam": 14.02
+  },
+  "delivery_cost": {
+   "1|Alankuppam": 4165.87,
+   "1|Annainagar": 4812.75,
+   "1|Auroville": 2122.05,
+   "1|Bommayapalayam": 4889.79,
+   "1|Edayanchavadi": 2938.81,
+   "1|Irumbai": 4411.96,
+   "1|Kottakarai": 3593.17,
+   "1|Kuilapalayam": 3432.16,
+   "1|Morattandi": 5081.85,
+   "1|Periya Mudaliar Chavadi": 4882.34,
+   "1|Rayapettai": 4187.71,
+   "1|Sanjeevi Nagar": 4564.94,
+   "1|Tiruchitrambalam": 4958.79,
+   "2|Bommayapalayam": 2860.64,
+   "2|Chinna Mudaliar Chavadi": 2667.99,
+   "2|Edayanchavadi": 3842.16,
+   "2|Kalapet": 4957.65,
+   "2|Karuvadikuppam": 4075.59,
+   "2|Kotamedu": 2892.83,
+   "2|Kottakarai": 4863.91,
+   "2|Kottakuppam": 3132.6,
+   "2|Krishna Nagar": 4861.05,
+   "2|Kuilapalayam": 1548.46,
+   "2|Muthialpet": 4444.74,
+   "2|Periya Mudaliar Chavadi": 2365.56,
+   "2|Solai Nagar": 4327.44,
+   "3|Brindavanam": 2535.16,
+   "3|Dhanvantari Nagar": 4419.45,
+   "3|Gorimedu": 4748.34,
+   "3|Grand Bazaar": 1248.31,
+   "3|Harbour": 3888.74,
+   "3|Karuvadikuppam": 3336.15,
+   "3|Kathirkamam": 4476.38,
+   "3|Kaveri Nagar": 4073.31,
+   "3|Kotamedu": 4077.31,
+   "3|Kottakuppam": 3776.03,
+   "3|Krishna Nagar": 2665.71,
+   "3|Lawspet": 3944.49,
+   "3|Mettupalayam": 4814.48,
+   "3|Moolakulam": 4836.9
+  },
+  "warnings": [
+   "2208 store-area legs use real routed travel times (OSRM); 0 use a straight-line estimate",
+   "areas unreachable within their delivery promise and therefore never servable: ['Ganapathichettikulam', 'Kilputhupattu', 'Korkadu', 'Sedarapet', 'Uruvaiyar']"
+  ]
+ },
+ "classical": {
+  "metrics": {
+   "objective_value": 2205629.5406,
+   "revenue_captured": 2349016.9041,
+   "opening_cost": 39400.0,
+   "delivery_cost": 103987.3635,
+   "demand_units_total": 26005.16,
+   "demand_units_served": 23154.06,
+   "service_level": 0.8904,
+   "budget_used": 39400.0,
+   "storage_used": 12336.3719,
+   "storage_available": 17600.0,
+   "storage_utilization": 0.7009,
+   "feasible": true
+  },
+  "details": {
+   "solver": "PuLP + CBC (branch and bound)",
+   "pulp_status": "Optimal",
+   "proven_optimal": true,
+   "n_variables": 1104,
+   "n_constraints": 1146,
+   "time_limit_sec": 120,
+   "pulp_objective_value": 2205629.540552,
+   "integerised_constraints": true,
+   "notes": [
+    "CBC is an exact MILP solver; status 'Optimal' means optimality was proven FOR THIS MODEL, not for any reformulation of it."
+   ],
+   "runtime": 0.20109149999916553
+  },
+  "assign": null
+ }
+}

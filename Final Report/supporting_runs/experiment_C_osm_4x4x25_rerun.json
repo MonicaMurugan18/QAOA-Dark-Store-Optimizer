@@ -1,0 +1,232 @@
+{
+ "instance": {
+  "stores": [
+   [
+    2,
+    "Pour Tous",
+    9200.0,
+    4200.0
+   ],
+   [
+    3,
+    "Rathna Departmental Store",
+    9200.0,
+    4200.0
+   ],
+   [
+    4,
+    "Green City",
+    9200.0,
+    4200.0
+   ],
+   [
+    5,
+    "Nilgiri's",
+    9200.0,
+    4200.0
+   ]
+  ],
+  "areas": [
+   [
+    "Karuvadikuppam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Muthialpet",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Veerampattinam",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ],
+   [
+    "Villianur",
+    303.81,
+    321387.29,
+    570.22,
+    57849.713,
+    115
+   ]
+  ],
+  "n_links": 8,
+  "links": {
+   "2|Karuvadikuppam": 11.813,
+   "2|Muthialpet": 12.883,
+   "3|Karuvadikuppam": 9.67,
+   "3|Muthialpet": 7.303,
+   "4|Karuvadikuppam": 9.618,
+   "4|Muthialpet": 7.18,
+   "5|Karuvadikuppam": 10.873,
+   "5|Muthialpet": 7.633
+  },
+  "delivery_cost": {
+   "2|Karuvadikuppam": 4075.59,
+   "2|Muthialpet": 4444.74,
+   "3|Karuvadikuppam": 3336.15,
+   "3|Muthialpet": 2519.64,
+   "4|Karuvadikuppam": 3318.31,
+   "4|Muthialpet": 2477.1,
+   "5|Karuvadikuppam": 3751.29,
+   "5|Muthialpet": 2633.49
+  },
+  "warnings": [
+   "16 store-area legs use real routed travel times (OSRM); 0 use a straight-line estimate",
+   "areas unreachable within their delivery promise and therefore never servable: ['Veerampattinam', 'Villianur']"
+  ]
+ },
+ "classical": {
+  "metrics": {
+   "objective_value": 100704.0117,
+   "revenue_captured": 115699.4252,
+   "opening_cost": 9200.0,
+   "delivery_cost": 5795.4135,
+   "demand_units_total": 2280.88,
+   "demand_units_served": 1140.44,
+   "service_level": 0.5,
+   "budget_used": 9200.0,
+   "storage_used": 607.6206,
+   "storage_available": 4200.0,
+   "storage_utilization": 0.1447,
+   "feasible": true
+  },
+  "details": {
+   "solver": "PuLP + CBC (branch and bound)",
+   "pulp_status": "Optimal",
+   "proven_optimal": true,
+   "n_variables": 12,
+   "n_constraints": 15,
+   "time_limit_sec": 120,
+   "pulp_objective_value": 100704.01169200001,
+   "integerised_constraints": true,
+   "notes": [
+    "CBC is an exact MILP solver; status 'Optimal' means optimality was proven FOR THIS MODEL, not for any reformulation of it."
+   ],
+   "runtime": 0.10762879997491837
+  },
+  "assign": null
+ },
+ "qubo_compact": {
+  "encoding": "compact",
+  "n_qubits": 15,
+  "n_decision_variables": 12,
+  "n_auxiliary_variables": 3,
+  "search_space_size": "2^15",
+  "penalty_weight": 142989.9022,
+  "qubo_offset": 0.0,
+  "constraints_in_reference_model": 15,
+  "notes": [
+   "Inequalities are encoded as penalties on their minimal violating subsets, so no slack variables are needed.",
+   "3 auxiliary qubits were added by AND gadgets to reduce degree-3-or-higher penalty terms to degree 2.",
+   "A constraint that no reachable solution can violate contributes no terms at all.",
+   "The delivery/service constraint is enforced structurally by omitting infeasible store-area links, so it consumes no qubits.",
+   "objective_value is reported in the original MAXIMISATION sense; the QUBO itself minimises the negation."
+  ]
+ },
+ "qubo_slack": {
+  "encoding": "slack",
+  "n_qubits": 79,
+  "n_decision_variables": 12,
+  "n_auxiliary_variables": 67,
+  "search_space_size": "2^79",
+  "penalty_weight": 142989.9022,
+  "qubo_offset": 57195960876800.0,
+  "constraints_in_reference_model": 15,
+  "notes": [
+   "67 integer slack qubits were added to convert inequality constraints into equalities. Slack cost dominates the register.",
+   "Slack variables carry no business meaning and are ignored when decoding a solution.",
+   "The delivery/service constraint is enforced structurally by omitting infeasible store-area links, so it consumes no qubits.",
+   "objective_value is reported in the original MAXIMISATION sense; the QUBO itself minimises the negation."
+  ]
+ },
+ "bruteforce": {
+  "qubo_minimum": -100704.01169200001,
+  "objective_value_maximisation": 100704.01169200001,
+  "bitstring_variable_order": "001000001100000",
+  "states_enumerated": 32768
+ },
+ "qaoa": [
+  {
+   "reps": 3,
+   "maxiter": 150,
+   "shots": 2048,
+   "metrics": {
+    "objective_value": 100704.0117,
+    "revenue_captured": 115699.4252,
+    "opening_cost": 9200.0,
+    "delivery_cost": 5795.4135,
+    "demand_units_total": 2280.88,
+    "demand_units_served": 1140.44,
+    "service_level": 0.5,
+    "budget_used": 9200.0,
+    "storage_used": 607.6206,
+    "storage_available": 4200.0,
+    "storage_utilization": 0.1447,
+    "feasible": true
+   },
+   "details": {
+    "solver": "QAOA (Qiskit QAOAAnsatz + StatevectorSampler, local simulator)",
+    "implementation": "explicit loop over Qiskit primitives",
+    "encoding": "compact",
+    "n_qubits": 15,
+    "n_decision_variables": 12,
+    "n_auxiliary_variables": 3,
+    "reps_p": 3,
+    "maxiter": 150,
+    "shots_per_iteration": 2048,
+    "final_shots": 8192,
+    "seed": 42,
+    "penalty_weight": 142989.9022,
+    "hamiltonian_scale_divisor": 142989.9022,
+    "ising_offset": 979945.9957,
+    "circuit_depth": 86,
+    "circuit_operations": 418,
+    "optimizer": "scipy COBYLA",
+    "optimizer_success": true,
+    "optimizer_message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+    "circuit_evaluations": 55,
+    "best_expectation_rupees_minimisation": 933097.9057,
+    "final_angles": [
+     2.459505,
+     1.336212,
+     3.24597,
+     2.716963,
+     0.813847,
+     3.044068
+    ],
+    "distinct_bitstrings_sampled": 6457,
+    "feasible_shot_fraction": 0.019043,
+    "probability_of_returned_solution": 0.000122,
+    "returned_feasible_sample": true,
+    "qubo_value_of_returned_solution": 42285.8905,
+    "returned_bitstring": "010001100000100",
+    "stage_times_sec": {
+     "build_qubo": 0.0076,
+     "to_ising_and_normalise": 0.0396,
+     "build_circuit": 0.1467,
+     "angle_optimisation": 22.8461,
+     "final_measurement": 0.3333,
+     "decode_and_validate": 0.4989
+    },
+    "runtime": 23.873970399959944,
+    "notes": [
+     "QAOA samples a biased probability distribution. It does not enumerate the search space and gives no optimality guarantee.",
+     "The cost operator was divided by its largest coefficient before building the circuit. That is a monotone rescaling, so it leaves the ordering of all solutions and the location of the optimum unchanged; all reported values use the original unscaled QUBO.",
+     "Constraints are penalties inside the QUBO, so an infeasible sample is an expected outcome rather than a bug.",
+     "qiskit_algorithms.QAOA is deliberately not used: it was measured to scale pathologically on this version combination (>200s at 11 qubits versus 0.064s per sampler call)."
+    ]
+   }
+  }
+ ]
+}
